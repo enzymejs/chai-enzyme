@@ -1,0 +1,84 @@
+{
+  "name": "chai-enzyme",
+  "version": "0.0.2-alpha2",
+  "description": "Chai.js assertions for enzyme",
+  "homepage": "https://github.com/producthunt/chai-enzyme",
+  "author": {
+    "name": "Veselin Todorov",
+    "email": "hi@vesln.com",
+    "url": "https://github.com/vesln"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/producthunt/chai-enzyme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/producthunt/chai-enzyme/issues"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "prepublish": "npm run clean && npm run build",
+    "build": "babel src --out-dir build",
+    "clean": "rimraf build",
+    "test:lint": "standard --verbose | snazzy",
+    "test:unit": "NODE_ENV=test mocha test/**/*.test.js",
+    "test": "npm run test:lint && npm run test:unit"
+  },
+  "peerDependencies": {
+    "cheerio": "^0.19.0",
+    "enzyme": "1.x",
+    "chai": "3.x"
+  },
+  "keywords": [
+    "javascript",
+    "shallow rendering",
+    "shallowRender",
+    "test",
+    "reactjs",
+    "react",
+    "flux",
+    "testing",
+    "test utils",
+    "assertion helpers",
+    "tdd",
+    "mocha",
+    "chai",
+    "chaijs",
+    "enzyme"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^3.4.1",
+    "enzyme": "^1.2.0",
+    "jsdom": "^6.1.0",
+    "mocha": "^2.3.4",
+    "react": "^0.14.0",
+    "react-addons-test-utils": "^0.14.3",
+    "react-dom": "^0.14.0",
+    "rimraf": "^2.5.0",
+    "snazzy": "^2.0.1",
+    "standard": "^5.4.1"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "global": [
+      "describe",
+      "it",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "React",
+      "expect",
+      "createTest"
+    ]
+  },
+  "dependencies": {
+    "html": "0.0.10"
+  }
+}

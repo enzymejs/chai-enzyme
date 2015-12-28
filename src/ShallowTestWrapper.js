@@ -1,0 +1,79 @@
+import $ from 'cheerio'
+
+import TestWrapper from './TestWrapper'
+
+export default class ShallowTestWrapper extends TestWrapper {
+  constructor (wrapper) {
+    super()
+    this.wrapper = wrapper
+    this.el = $(wrapper.html())
+  }
+
+  inspect () {
+    const name = this.wrapper.root.unrendered.type.displayName ||
+      this.wrapper.root.unrendered.type.name ||
+      '???'
+
+    if (this.wrapper.root === this.wrapper) {
+      return `<${name} />`
+    }
+
+    return `the node in <${name} />`
+  }
+
+  attr (name) {
+    return this.el.attr(name)
+  }
+
+  html () {
+    return this.wrapper.html()
+  }
+
+  style (name) {
+    return this.el.css(name)
+  }
+
+  data (name) {
+    return this.el.data(name)
+  }
+
+  hasClass (name) {
+    return this.wrapper.hasClass(name)
+  }
+
+  classNames () {
+    return this.wrapper.props().className
+  }
+
+  id () {
+    return this.wrapper.props().id
+  }
+
+  value () {
+    return this.attr('value')
+  }
+
+  isChecked () {
+    return this.is(':checked')
+  }
+
+  isDisabled () {
+    return this.is(':disabled')
+  }
+
+  isSelected () {
+    throw new Error('not implemented yet')
+  }
+
+  is (selector) {
+    return this.el.is(selector)
+  }
+
+  hasNode (node) {
+    return this.wrapper.contains(node)
+  }
+
+  hasRef () {
+    throw new Error('shallow rendering does not support refs')
+  }
+}
