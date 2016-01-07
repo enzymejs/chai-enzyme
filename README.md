@@ -16,7 +16,7 @@
   1. [descendants(selector)](#descendantsselector)
   1. [disabled()](#disabled)
   1. [blank()](#blank)
-  1. [present()](#present())
+  1. [present()](#present)
   1. [html(str)](#htmlstr)
   1. [id(str)](#idstr)
   1. [match(selector)](#matchselector)
