@@ -11,7 +11,7 @@
   1. [Debug output in assertion exceptions](#debug-output-in-assertion-exceptions)
   1. [Assertions](#assertions)
     1. [checked()](#checked)
-    1. [className(str)](#classNamestr)
+    1. [className(str)](#classnamestr)
     1. [contain(node)](#containnode)
     1. [descendants(selector)](#descendantsselector)
     1. [disabled()](#disabled)
@@ -275,7 +275,7 @@ expect(wrapper.find('#disabled')).to.be.disabled()
 expect(wrapper.find('#not')).to.not.be.disabled()
 ```
 
-#### empty
+#### blank()
 
 | render | mount | shallow |
 | -------|-------|-------- |
