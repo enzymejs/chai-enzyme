@@ -22,6 +22,7 @@
     1. [`match(selector)`](#matchselector)
     1. [`ref(key)`](#refkey)
     1. [`selected()`](#selected)
+    1. [`tagName(str)`](#tagnamestr)
     1. [`text(str)`](#textstr)
     1. [`value(str)`](#valuestr)
     1. [`attr(key, [val])`](#attrkey-val)
@@ -479,6 +480,38 @@ const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
 expect(wrapper.find('#test1')).to.be.selected()
 expect(wrapper.find('#test2')).to.not.be.selected()
+```
+
+#### `tagName(str)`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| yes    | yes   | yes     |
+
+
+Assert that the given wrapper has the tag name:
+
+```js
+import React from 'react'
+import {mount, render, shallow} from 'enzyme'
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <div>
+        <span />
+      </div>
+    )
+  }
+}
+
+const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.have.tagName('div')
+expect(wrapper.find('span')).to.have.tagName('span')
+
+expect(wrapper).to.not.have.tagName('a')
+expect(wrapper.find('span')).to.not.have.tagName('a')
 ```
 
 #### `text(str)`
