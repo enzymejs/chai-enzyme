@@ -18,8 +18,8 @@ describe('#tagName', () => {
     })
 
     it('passes negated when the actual does not match the expected', (wrapper) => {
-      expect(wrapper).to.not.have.tagName('span')
-      expect(wrapper.find('span')).to.not.have.tagName('div')
+      expect(wrapper).to.not.have.tagName('a')
+      expect(wrapper.find('span')).to.not.have.tagName('a')
     })
 
     it('fails when the actual does not match the expected', (wrapper) => {
