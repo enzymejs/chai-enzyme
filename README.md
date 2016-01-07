@@ -10,25 +10,25 @@
   1. [Setup](#setup)
   1. [Debug output in assertion exceptions](#debug-output-in-assertion-exceptions)
   1. [Assertions](#assertions)
-  1. [checked()](#checked)
-  1. [className(str)](#classNamestr)
-  1. [contain(node)](#containnode)
-  1. [descendants(selector)](#descendantsselector)
-  1. [disabled()](#disabled)
-  1. [blank()](#blank)
-  1. [present()](#present)
-  1. [html(str)](#htmlstr)
-  1. [id(str)](#idstr)
-  1. [match(selector)](#matchselector)
-  1. [ref(key)](#refkey)
-  1. [selected()](#selected)
-  1. [text(str)](#textstr)
-  1. [value(str)](#valuestr)
-  1. [attr(key, val)](#attrkey-val)
-  1. [data(key, val)](#datakey-val)
-  1. [style(key, val)](#stylekey-val)
-  1. [state(key, val)](#statekey-val)
-  1. [prop(key, val)](#propkey-val)
+    1. [`checked()`](#checked)
+    1. [`className(str)`](#classnamestr)
+    1. [`contain(node)`](#containnode)
+    1. [`descendants(selector)`](#descendantsselector)
+    1. [`disabled()`](#disabled)
+    1. [`blank()`](#blank)
+    1. [`present()`](#present)
+    1. [`html(str)`](#htmlstr)
+    1. [`id(str)`](#idstr)
+    1. [`match(selector)`](#matchselector)
+    1. [`ref(key)`](#refkey)
+    1. [`selected()`](#selected)
+    1. [`text(str)`](#textstr)
+    1. [`value(str)`](#valuestr)
+    1. [`attr(key, [val])`](#attrkey-val)
+    1. [`data(key, [val])`](#datakey-val)
+    1. [`style(key, [val])`](#stylekey-val)
+    1. [`state(key, [val])`](#statekey-val)
+    1. [`prop(key, [val])`](#propkey-val)
   1. [Development](#development)
   1. [Contributing](#contributing)
   1. [License](#license)
@@ -109,7 +109,7 @@ Note that not all assertions work with every rendering strategy.
 If you are wondering what rendering machanism to use when, refer to [enzyme's
 documentation](https://github.com/airbnb/enzyme).
 
-#### checked()
+#### `checked()`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -139,7 +139,7 @@ expect(wrapper.find('#checked')).to.be.checked()
 expect(wrapper.find('#not')).to.not.be.checked()
 ```
 
-#### className(str)
+#### `className(str)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -168,7 +168,7 @@ expect(wrapper.find('span')).to.have.className('child')
 expect(wrapper.find('span')).to.not.have.className('root')
 ```
 
-#### contain(node)
+#### `contain(node)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -212,7 +212,7 @@ expect(wrapper).to.contain(<User index={1} />)
 expect(wrapper).to.not.contain(<User index={3} />)
 ```
 
-#### descendants(selector)
+#### `descendants(selector)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -245,7 +245,7 @@ expect(wrapper.find('#child')).to.have.descendants('#last')
 expect(wrapper).to.not.have.descendants('#root1')
 ```
 
-#### disabled()
+#### `disabled()`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -275,7 +275,7 @@ expect(wrapper.find('#disabled')).to.be.disabled()
 expect(wrapper.find('#not')).to.not.be.disabled()
 ```
 
-#### empty
+#### `blank()`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -308,7 +308,7 @@ expect(wrapper.find('#child')).to.be.empty // an alias
 expect(wrapper.find('#parent')).to.not.be.empty // an alias
 ```
 
-#### present()
+#### `present()`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -335,7 +335,7 @@ expect(wrapper.find('#parent')).be.present()
 expect(wrapper.find('#parent')).to.exist // an alias
 ```
 
-#### html(str)
+#### `html(str)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -367,7 +367,7 @@ expect(wrapper.find('#child')).to.not.have.html('<span id="child">Test 1</span>'
 expect(wrapper.find('#child')).to.have.html().match(/Test/)
 ```
 
-#### id(str)
+#### `id(str)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -396,7 +396,7 @@ expect(wrapper).to.have.id('root')
 expect(wrapper).to.not.have.id('child')
 ```
 
-#### match(selector)
+#### `match(selector)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -425,7 +425,7 @@ expect(wrapper.find('span')).to.match('#child')
 expect(wrapper.find('#root')).to.not.match('#child')
 ```
 
-#### ref(key)
+#### `ref(key)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -451,7 +451,7 @@ expect(wrapper).to.have.ref('test')
 expect(wrapper).to.have.ref('random')
 ```
 
-#### selected()
+#### `selected()`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -481,7 +481,7 @@ expect(wrapper.find('#test1')).to.be.selected()
 expect(wrapper.find('#test2')).to.not.be.selected()
 ```
 
-#### text(str)
+#### `text(str)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -517,7 +517,7 @@ expect(wrapper.find('#child')).to.not.include.text('Other text') // include is a
 expect(wrapper.find('#child')).to.have.text().match(/Test/)
 ```
 
-#### value(str)
+#### `value(str)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -546,7 +546,7 @@ expect(wrapper.find('input')).to.have.value('test')
 expect(wrapper.find('input')).to.not.have.value('other')
 ```
 
-#### attr(key, [val])
+#### `attr(key, [val])`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -580,7 +580,7 @@ expect(wrapper).to.not.have.attr('id', 'invalid')
 expect(wrapper).to.have.attr('id').equal('root')
 ```
 
-#### data(key, [val])
+#### `data(key, [val])`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -614,7 +614,7 @@ expect(wrapper).to.not.have.data('name', 'invalid')
 expect(wrapper).to.have.data('name').equal('root')
 ```
 
-#### style(key, [val])
+#### `style(key, [val])`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -648,7 +648,7 @@ expect(wrapper).to.not.have.style('border', '2px')
 expect(wrapper).to.have.style('border').equal('1px')
 ```
 
-#### state(key, [val])
+#### `state(key, [val])`
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -688,7 +688,7 @@ expect(wrapper).to.have.state('foo').equal('bar')
 ```
 
 
-#### prop(key, [val])
+#### `prop(key, [val])`
 
 | render | mount | shallow |
 | -------|-------|-------- |
