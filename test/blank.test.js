@@ -11,7 +11,7 @@ class Fixture extends React.Component {
 
 const it = createTest(<Fixture />)
 
-describe('#blank()', () => {
+describe('#blank', () => {
   describe('()', () => {
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper.find('#child')).to.be.blank()
