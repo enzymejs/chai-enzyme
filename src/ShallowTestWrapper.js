@@ -33,6 +33,10 @@ export default class ShallowTestWrapper extends TestWrapper {
     return this.el.css(name)
   }
 
+  tagName () {
+    return this.el[0].name
+  }
+
   data (name) {
     return this.el.data(name)
   }

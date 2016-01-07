@@ -14,6 +14,7 @@ import id from './assertions/id'
 import match from './assertions/match'
 import ref from './assertions/ref'
 import selected from './assertions/selected'
+import tagName from './assertions/tagName'
 import text from './assertions/text'
 import value from './assertions/value'
 
@@ -86,6 +87,7 @@ export default function (debug = printDebug) {
     overwriteMethod(descendants)
     overwriteMethod(ref)
     overwriteMethod(html)
+    overwriteMethod(tagName)
     overwriteMethod(text)
 
     overwriteProperty(empty)
