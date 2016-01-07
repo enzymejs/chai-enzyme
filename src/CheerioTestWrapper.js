@@ -28,6 +28,10 @@ export default class CheerioTestWrapper extends TestWrapper {
     return this.el.css(name)
   }
 
+  tagName () {
+    return this.el[0].name
+  }
+
   data (name) {
     return this.el.data(name)
   }

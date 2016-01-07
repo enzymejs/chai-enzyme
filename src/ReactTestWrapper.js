@@ -33,6 +33,10 @@ export default class ReactTestWrapper extends TestWrapper {
     return this.el.style[name] || undefined
   }
 
+  tagName () {
+    return this.el.tagName.toLowerCase()
+  }
+
   data (name) {
     return this.attr(`data-${name}`)
   }
