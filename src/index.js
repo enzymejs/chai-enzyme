@@ -89,7 +89,10 @@ export default function (debug = printDebug) {
     overwriteMethod(text)
 
     overwriteProperty(empty)
+    overwriteMethod(empty, 'blank')
+
     overwriteProperty(exist)
+    overwriteMethod(exist, 'present')
 
     overwriteChainableMethod(contain)
   }

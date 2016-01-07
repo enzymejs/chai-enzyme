@@ -15,8 +15,8 @@
   1. [contain(node)](#containnode)
   1. [descendants(selector)](#descendantsselector)
   1. [disabled()](#disabled)
-  1. [empty](#empty)
-  1. [exist](#exist)
+  1. [blank()](#blank)
+  1. [present()](#present())
   1. [html(str)](#htmlstr)
   1. [id(str)](#idstr)
   1. [match(selector)](#matchselector)
@@ -301,11 +301,14 @@ class Fixture extends React.Component {
 
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
-expect(wrapper.find('#child')).to.be.empty
-expect(wrapper.find('#parent')).to.not.be.empty
+expect(wrapper.find('#child')).to.be.blank()
+expect(wrapper.find('#parent')).to.not.be.blank()
+
+expect(wrapper.find('#child')).to.be.empty // an alias
+expect(wrapper.find('#parent')).to.not.be.empty // an alias
 ```
 
-#### exist
+#### present()
 
 | render | mount | shallow |
 | -------|-------|-------- |
@@ -328,7 +331,8 @@ class Fixture extends React.Component {
 
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
-expect(wrapper.find('#parent')).to.exist
+expect(wrapper.find('#parent')).be.present()
+expect(wrapper.find('#parent')).to.exist // an alias
 ```
 
 #### html(str)
