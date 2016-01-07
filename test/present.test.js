@@ -8,7 +8,7 @@ class Fixture extends React.Component {
 
 const it = createTest(<Fixture />)
 
-describe('#present()', () => {
+describe('#present', () => {
   describe('()', () => {
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper.find('#parent')).to.be.present()
