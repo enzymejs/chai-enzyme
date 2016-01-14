@@ -5,16 +5,16 @@ export default function text ({ wrapper, markup, flag, arg1, sig }) {
     if (flag(this, 'contains')) {
       this.assert(
         actual.includes(String(arg1)),
-        'expected ' + sig + ' to contain text #{exp}, but it has #{act} ' + markup,
-        'expected ' + sig + ' not to contain text #{exp}, but it has #{act} ' + markup,
+        () => 'expected ' + sig + ' to contain text #{exp}, but it has #{act} ' + markup(),
+        () => 'expected ' + sig + ' not to contain text #{exp}, but it has #{act} ' + markup(),
         arg1,
         actual
       )
     } else {
       this.assert(
         actual === String(arg1),
-        'expected ' + sig + ' to have text #{exp}, but it has #{act} ' + markup,
-        'expected ' + sig + ' not to have text #{exp}, but it has #{act} ' + markup,
+        () => 'expected ' + sig + ' to have text #{exp}, but it has #{act} ' + markup(),
+        () => 'expected ' + sig + ' not to have text #{exp}, but it has #{act} ' + markup(),
         arg1,
         actual
       )

@@ -5,8 +5,8 @@ export default function generic (assertion, desc) {
     if (!flag(this, 'negate') || undefined === arg2) {
       this.assert(
         undefined !== actual,
-        'expected ' + sig + ' to have a #{exp} ' + desc + markup,
-        'expected ' + sig + ' not to have a #{exp} ' + desc + markup,
+        () => 'expected ' + sig + ' to have a #{exp} ' + desc + markup(),
+        () => 'expected ' + sig + ' not to have a #{exp} ' + desc + markup(),
         arg1
       )
     }
@@ -14,8 +14,8 @@ export default function generic (assertion, desc) {
     if (undefined !== arg2) {
       this.assert(
         arg2 === actual,
-        'expected ' + sig + ' to have a ' + inspect(arg1) + ' ' + desc + ' with the value #{exp}, but the value was #{act}' + markup,
-        'expected ' + sig + ' not to have a ' + inspect(arg1) + ' ' + desc + ' with the value #{act}' + markup,
+        () => 'expected ' + sig + ' to have a ' + inspect(arg1) + ' ' + desc + ' with the value #{exp}, but the value was #{act}' + markup(),
+        () => 'expected ' + sig + ' not to have a ' + inspect(arg1) + ' ' + desc + ' with the value #{act}' + markup(),
         arg2,
         actual
       )

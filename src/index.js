@@ -32,7 +32,7 @@ export default function (debug = printDebug) {
         }
 
         assertion.call(this, {
-          markup: debug(wrapper),
+          markup: () => debug(wrapper),
           sig: inspect(wrapper),
           wrapper,
           arg1,

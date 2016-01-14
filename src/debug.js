@@ -5,7 +5,13 @@ function indent (n) {
 }
 
 export default function debug (wrapper) {
-  const html = prettyPrint(wrapper.html(), { indent_size: 2 })
+  let html = null
+
+  try {
+    html = prettyPrint(wrapper.html(), { indent_size: 2 })
+  } catch (err) {
+    return `HTML: Not available due to: ${err.message}`
+  }
 
   const out = `\n\nHTML:\n\n${html}`
 
