@@ -75,7 +75,8 @@
       "afterEach",
       "React",
       "expect",
-      "createTest"
+      "createTest",
+      "context"
     ]
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-export default function descendantsCount ({ wrapper, markup, arg1, arg2=1, sig }) {
+export default function descendantsCount ({ wrapper, markup, arg1, arg2 = 1, sig }) {
   this.assert(
       wrapper.hasDescendantsCount(arg1, arg2),
       () => 'expected ' + sig + ' to have ' + arg2 + ' descendants #{exp} ' + markup(),
@@ -7,11 +7,11 @@ export default function descendantsCount ({ wrapper, markup, arg1, arg2=1, sig }
   )
 }
 
-function convenienceHelper(count) {
+function convenienceHelper (count) {
   return function ({ wrapper, markup, arg1, sig }) {
-    const arg2 = count;
-    descendantsCount.call(this, { wrapper, markup, arg1, arg2, sig});
-  };
+    const arg2 = count
+    descendantsCount.call(this, {wrapper, markup, arg1, arg2, sig})
+  }
 }
 
 export const descendantsCountWrappers = {
@@ -19,4 +19,4 @@ export const descendantsCountWrappers = {
   twoDescendents: convenienceHelper(2),
   threeDescendents: convenienceHelper(3),
   fourDescendents: convenienceHelper(4)
-};
+}

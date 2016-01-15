@@ -15,7 +15,7 @@ export default class TestWrapper {
     return this.value() === value
   }
 
-  hasDescendantsCount (selector, count=1) {
+  hasDescendantsCount (selector, count = 1) {
     return this.wrapper.find(selector).length === count
   }
 

@@ -72,7 +72,7 @@ export default function (debug = printDebug) {
       })
     }
 
-    function buildAssertionsOutOfWrapperObject(wrapperObject) {
+    function buildAssertionsOutOfWrapperObject (wrapperObject) {
       Object.keys(wrapperObject).forEach(key => overwriteMethod(wrapperObject[key], key))
     }
 
@@ -96,7 +96,6 @@ export default function (debug = printDebug) {
     overwriteMethod(text)
     overwriteMethod(descendantsCount)
     buildAssertionsOutOfWrapperObject(descendantsCountWrappers)
-
 
     overwriteProperty(empty)
     overwriteMethod(empty, 'blank')

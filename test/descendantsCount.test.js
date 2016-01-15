@@ -45,7 +45,7 @@ describe('#descendantsCount', () => {
     })
     context('When no count is given', () => {
       it('passes when only 1 descendent is found', (wrapper) => {
-        expect(wrapper).to.have.descendantsCount('#first');
+        expect(wrapper).to.have.descendantsCount('#first')
       })
       it('fails if more then 1 descendent is found', (wrapper) => {
         expect(() => {
