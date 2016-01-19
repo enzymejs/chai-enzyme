@@ -6,7 +6,14 @@ export default class ShallowTestWrapper extends TestWrapper {
   constructor (wrapper) {
     super()
     this.wrapper = wrapper
-    this.el = $(wrapper.html())
+  }
+
+  get el () {
+    if (!this.__el) {
+      this.__el = $(this.wrapper.html())
+    }
+
+    return this.__el
   }
 
   inspect () {
