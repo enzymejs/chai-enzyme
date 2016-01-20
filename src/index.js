@@ -17,6 +17,7 @@ import selected from './assertions/selected'
 import tagName from './assertions/tagName'
 import text from './assertions/text'
 import value from './assertions/value'
+import descendantsCount, {descendantsCountWrappers} from './assertions/descendantsCount'
 
 export default function (debug = printDebug) {
   return function (chai, utils) {
@@ -71,6 +72,10 @@ export default function (debug = printDebug) {
       })
     }
 
+    function buildAssertionsOutOfWrapperObject (wrapperObject) {
+      Object.keys(wrapperObject).forEach(key => overwriteMethod(wrapperObject[key], key))
+    }
+
     overwriteMethod(generic('attr', 'attribute'), 'attr')
     overwriteMethod(generic('data', 'data attribute'), 'data')
     overwriteMethod(generic('style', 'CSS style property'), 'style')
@@ -89,6 +94,8 @@ export default function (debug = printDebug) {
     overwriteMethod(html)
     overwriteMethod(tagName)
     overwriteMethod(text)
+    overwriteMethod(descendantsCount)
+    buildAssertionsOutOfWrapperObject(descendantsCountWrappers)
 
     overwriteProperty(empty)
     overwriteMethod(empty, 'blank')

@@ -14,6 +14,8 @@
     1. [`className(str)`](#classnamestr)
     1. [`contain(node)`](#containnode)
     1. [`descendants(selector)`](#descendantsselector)
+    1. [`descendantsCount(selector, count)`](#descendantsCountselector)
+    1. [`one/two/three/four/Descendants(selector, count)`](#one/two/three/four/Descendants)
     1. [`disabled()`](#disabled)
     1. [`blank()`](#blank)
     1. [`present()`](#present)
@@ -244,6 +246,76 @@ expect(wrapper).to.have.descendants('#root')
 expect(wrapper.find('#child')).to.have.descendants('#last')
 
 expect(wrapper).to.not.have.descendants('#root1')
+```
+
+#### `descendantsCount(selector)`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| yes    | yes   | yes     |
+
+
+Assert that the wrapper contains a exact amount of descendants matching the given selector.
+Defaults to looking for exactly 1 descendent
+
+```js
+import React from 'react'
+import {mount, render, shallow} from 'enzyme'
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <div id='root'>
+        <span id='child'>
+          <span id='last'></span>
+          <span id='last'></span>
+        </span>
+      </div>
+    )
+  }
+}
+
+const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.have.descendantsCount('#root')
+expect(wrapper.find('#child')).to.have.descendantsCount('#last', 2)
+
+expect(wrapper).to.not.have.descendantsCount('#child', 3)
+```
+
+#### `(one/two/three/four)Descendants(selector)`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| yes    | yes   | yes     |
+
+
+More human readable way of using descendantsCount to assert that the wrapper contains a exact amount of descendants matching the given selector.
+
+
+```js
+import React from 'react'
+import {mount, render, shallow} from 'enzyme'
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <div id='root'>
+        <span id='child'>
+          <span id='last'></span>
+          <span id='last'></span>
+        </span>
+      </div>
+    )
+  }
+}
+
+const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.have.oneDescendents('#root')
+expect(wrapper.find('#child')).to.have.twoDescendants('#last', 2)
+
+expect(wrapper).to.not.have.threeDescendents('#child', 3)
 ```
 
 #### `disabled()`
