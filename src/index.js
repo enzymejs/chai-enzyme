@@ -90,10 +90,10 @@ export default function (debug = printDebug) {
 
     function addAssertion (assertion, name) {
       name = name || assertion.name
-      if(chai.Assertion.prototype[name]) {
-        overwriteMethod (assertion, name)
+      if (chai.Assertion.prototype[name]) {
+        overwriteMethod(assertion, name)
       } else {
-        addMethod (assertion, name)
+        addMethod(assertion, name)
       }
     }
 

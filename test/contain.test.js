@@ -27,7 +27,6 @@ const it = createTest(<Fixture />)
 
 describe('#contain', () => {
   describe('(node)', () => {
-
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper).to.contain(<User index={1} />)
       expect(wrapper).to.contain(<User index={2} />)
