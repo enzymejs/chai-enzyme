@@ -39,5 +39,11 @@ describe('#id', () => {
         expect(wrapper.find('span')).to.not.have.id('child')
       }).to.throw(`not to have a 'child' id`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.id('child')
+      }).to.throw()
+    })
   })
 })

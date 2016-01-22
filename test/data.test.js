@@ -39,6 +39,12 @@ describe('#data', () => {
         expect(wrapper.find('span')).to.not.have.data('name')
       }).to.throw(`not to have a 'name' data attribute`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.data('name')
+      }).to.throw()
+    })
   })
 
   describe('(attr, value)', () => {

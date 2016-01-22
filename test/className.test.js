@@ -39,5 +39,11 @@ describe('#className', () => {
         expect(wrapper.find('span')).to.not.have.className('child')
       }).to.throw(`not to have a 'child' class`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.className('child')
+      }).to.throw()
+    })
   })
 })

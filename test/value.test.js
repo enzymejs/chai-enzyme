@@ -29,5 +29,11 @@ describe('#value', () => {
         expect(wrapper.find('input')).to.not.have.value('test')
       }).to.throw(`not to have a 'test' value`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.value('test')
+      }).to.throw()
+    })
   })
 })

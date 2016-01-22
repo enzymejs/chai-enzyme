@@ -27,11 +27,11 @@ const it = createTest(<Fixture />)
 
 describe('#contain', () => {
   describe('(node)', () => {
+
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper).to.contain(<User index={1} />)
       expect(wrapper).to.contain(<User index={2} />)
     }, { render: false })
-
     it('passes negated when the actual does not match the expected', (wrapper) => {
       expect(wrapper).to.not.contain(<User index={3} />)
     }, { render: false })
@@ -45,5 +45,11 @@ describe('#contain', () => {
         expect(wrapper).to.not.contain(<User index={2} />)
       }).to.throw(`not to contain`)
     }, { render: false })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.contain(<User index={1} />)
+      }).to.throw()
+    })
   })
 })
