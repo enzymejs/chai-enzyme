@@ -41,5 +41,11 @@ describe('#descendants', () => {
         expect(wrapper.find('#child')).to.not.have.descendants('#last')
       }).to.throw(`not to have descendants '#last'`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.descendants('#root')
+      }).to.throw()
+    })
   })
 })

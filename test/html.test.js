@@ -30,6 +30,12 @@ describe('#html', () => {
       }).to.throw(`not to be '<span id`)
     })
 
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.html('<span id="child">Test</span>')
+      }).to.throw()
+    })
+
     it('chains', (wrapper) => {
       expect(wrapper.find('#child')).to.have.html().match(/Test/)
     })

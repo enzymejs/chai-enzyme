@@ -29,5 +29,11 @@ describe('#ref', () => {
         expect(wrapper).to.not.have.ref('test')
       }).to.throw(`not to have a 'test' ref`)
     }, { render: false, shallow: false })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.ref('test')
+      }).to.throw()
+    })
   })
 })

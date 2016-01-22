@@ -31,5 +31,11 @@ describe('#tagName', () => {
         expect(wrapper.find('span')).to.have.tagName('a')
       }).to.throw(`to have a 'a' tag name, but it has 'span'`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.tagName('div')
+      }).to.throw()
+    })
   })
 })

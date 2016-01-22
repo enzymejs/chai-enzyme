@@ -30,5 +30,11 @@ describe('#checked', () => {
         expect(wrapper.find('#checked')).to.not.be.checked()
       }).to.throw(`not to be checked`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.be.checked()
+      }).to.throw()
+    })
   })
 })

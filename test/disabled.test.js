@@ -30,5 +30,11 @@ describe('#disabled', () => {
         expect(wrapper.find('#disabled')).to.not.be.disabled()
       }).to.throw(`not to be disabled`)
     })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.be.disabled()
+      }).to.throw()
+    })
   })
 })

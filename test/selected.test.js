@@ -30,5 +30,11 @@ describe('#selected', () => {
         expect(wrapper.find('#test1')).to.not.be.selected()
       }).to.throw(`not to be selected`)
     }, { shallow: false })
+
+    it('fails when actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.be.selected()
+      }).to.throw()
+    })
   })
 })
