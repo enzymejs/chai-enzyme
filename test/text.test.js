@@ -41,7 +41,7 @@ describe('#text', () => {
       expect(wrapper.find('#child')).to.not.include.text('other')
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.text('Test')
       }).to.throw()

@@ -40,7 +40,7 @@ describe('#style', () => {
       }).to.throw(`not to have a 'color' CSS style property`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.style('border')
       }).to.throw()

@@ -40,7 +40,7 @@ describe('#id', () => {
       }).to.throw(`not to have a 'child' id`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.id('child')
       }).to.throw()

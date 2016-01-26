@@ -65,7 +65,7 @@ describe('#prop', () => {
       }).to.throw(`not to have a 'index' prop with the value 1`)
     }, { render: false })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.prop('index')
       }).to.throw()

@@ -42,7 +42,7 @@ describe('#descendants', () => {
       }).to.throw(`not to have descendants '#last'`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.descendants('#root')
       }).to.throw()

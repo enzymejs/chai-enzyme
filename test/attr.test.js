@@ -11,14 +11,12 @@ class Fixture extends React.Component {
 const it = createTest(<Fixture />)
 
 describe('#attr', () => {
-  it('fails when actual is not a enzymeWrapper', () => {
-    expect(() => {
-      expect(undefined).to.have.attr('key', 'somekey')
-      expect({ 'foo': 'bar' }).to.have.attr('key', 'somekey')
-      expect([]).to.have.attr('key', 'somekey')
-      expect('test').to.have.attr('key', 'somekey')
-      expect(12345).to.have.attr('key', 'somekey')
-    }).to.throw()
+  it('fails when the actual is not an enzyme wrapper', () => {
+    [undefined, { foo: 'bar' }, [], 'test', 12345].forEach((actual) => {
+      expect(() => {
+        expect(actual).to.have.attr('key', 'somekey')
+      }).to.throw()
+    })
   })
 
   describe('(attr)', () => {

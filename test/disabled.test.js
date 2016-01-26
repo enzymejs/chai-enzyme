@@ -31,7 +31,7 @@ describe('#disabled', () => {
       }).to.throw(`not to be disabled`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.be.disabled()
       }).to.throw()

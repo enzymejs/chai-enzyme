@@ -31,7 +31,7 @@ describe('#selected', () => {
       }).to.throw(`not to be selected`)
     }, { shallow: false })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.be.selected()
       }).to.throw()

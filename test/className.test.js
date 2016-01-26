@@ -40,7 +40,7 @@ describe('#className', () => {
       }).to.throw(`not to have a 'child' class`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.className('child')
       }).to.throw()

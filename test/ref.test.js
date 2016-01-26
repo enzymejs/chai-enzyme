@@ -30,7 +30,7 @@ describe('#ref', () => {
       }).to.throw(`not to have a 'test' ref`)
     }, { render: false, shallow: false })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.ref('test')
       }).to.throw()

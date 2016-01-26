@@ -20,7 +20,7 @@ describe('#present', () => {
       }).to.throw(`not to exist`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.be.present()
       }).to.throw()

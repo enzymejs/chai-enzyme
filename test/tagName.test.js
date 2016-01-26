@@ -32,7 +32,7 @@ describe('#tagName', () => {
       }).to.throw(`to have a 'a' tag name, but it has 'span'`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.tagName('div')
       }).to.throw()

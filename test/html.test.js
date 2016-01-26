@@ -30,7 +30,7 @@ describe('#html', () => {
       }).to.throw(`not to be '<span id`)
     })
 
-    it('fails when actual is undefined', () => {
+    it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.html('<span id="child">Test</span>')
       }).to.throw()
