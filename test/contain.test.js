@@ -45,5 +45,11 @@ describe('#contain', () => {
         expect(wrapper).to.not.contain(<User index={2} />)
       }).to.throw(`not to contain`)
     }, { render: false })
+
+    it('fails when the actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.contain(<User index={1} />)
+      }).to.throw()
+    })
   })
 })

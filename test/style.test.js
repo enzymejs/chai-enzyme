@@ -39,6 +39,12 @@ describe('#style', () => {
         expect(wrapper.find('span')).to.not.have.style('color')
       }).to.throw(`not to have a 'color' CSS style property`)
     })
+
+    it('fails when the actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.style('border')
+      }).to.throw()
+    })
   })
 
   describe('(name, value)', () => {

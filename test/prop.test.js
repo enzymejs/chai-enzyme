@@ -64,6 +64,12 @@ describe('#prop', () => {
         expect(wrapper.find(User).first()).to.not.have.prop('index', 1)
       }).to.throw(`not to have a 'index' prop with the value 1`)
     }, { render: false })
+
+    it('fails when the actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.have.prop('index')
+      }).to.throw()
+    })
   })
 
   it('chains', (wrapper) => {

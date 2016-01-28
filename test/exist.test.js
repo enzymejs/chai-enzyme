@@ -19,5 +19,11 @@ describe('#exist', () => {
         expect(wrapper.find('#parent')).to.not.exist
       }).to.throw(`not to exist`)
     })
+
+    it('fails when the actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.exist
+      }).to.throw()
+    })
   })
 })

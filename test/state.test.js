@@ -58,4 +58,10 @@ describe('#state', () => {
   it('chains', (wrapper) => {
     expect(wrapper).to.have.state('foo').equal('bar')
   }, { render: false })
+
+  it('fails when the actual is undefined', () => {
+    expect(() => {
+      expect(undefined).to.have.state('foo')
+    }).to.throw()
+  })
 })

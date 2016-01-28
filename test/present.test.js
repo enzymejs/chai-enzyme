@@ -19,5 +19,11 @@ describe('#present', () => {
         expect(wrapper.find('#parent')).to.not.be.present()
       }).to.throw(`not to exist`)
     })
+
+    it('fails when the actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.be.present()
+      }).to.throw()
+    })
   })
 })

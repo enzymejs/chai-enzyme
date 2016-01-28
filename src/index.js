@@ -71,30 +71,56 @@ export default function (debug = printDebug) {
       })
     }
 
-    overwriteMethod(generic('attr', 'attribute'), 'attr')
-    overwriteMethod(generic('data', 'data attribute'), 'data')
-    overwriteMethod(generic('style', 'CSS style property'), 'style')
-    overwriteMethod(generic('state', 'state'), 'state')
-    overwriteMethod(generic('prop', 'prop'), 'prop')
+    function addMethod (assertion, name) {
+      name = name || assertion.name
 
-    overwriteMethod(checked)
-    overwriteMethod(className)
-    overwriteMethod(disabled)
-    overwriteMethod(id)
-    overwriteMethod(selected)
-    overwriteMethod(value)
-    overwriteMethod(match)
-    overwriteMethod(descendants)
-    overwriteMethod(ref)
-    overwriteMethod(html)
-    overwriteMethod(tagName)
-    overwriteMethod(text)
+      Assertion.addMethod(name, function (arg1, arg2) {
+        const wrapper = wrap(flag(this, 'object'))
+        assertion.call(this, {
+          markup: () => debug(wrapper),
+          sig: inspect(wrapper),
+          wrapper,
+          arg1,
+          arg2,
+          flag,
+          inspect
+        })
+      })
+    }
+
+    function addAssertion (assertion, name) {
+      name = name || assertion.name
+      if (chai.Assertion.prototype[name]) {
+        overwriteMethod(assertion, name)
+      } else {
+        addMethod(assertion, name)
+      }
+    }
+
+    addAssertion(generic('attr', 'attribute'), 'attr')
+    addAssertion(generic('data', 'data attribute'), 'data')
+    addAssertion(generic('style', 'CSS style property'), 'style')
+    addAssertion(generic('state', 'state'), 'state')
+    addAssertion(generic('prop', 'prop'), 'prop')
+
+    addAssertion(checked)
+    addAssertion(className)
+    addAssertion(disabled)
+    addAssertion(id)
+    addAssertion(selected)
+    addAssertion(value)
+    addAssertion(match)
+    addAssertion(descendants)
+    addAssertion(ref)
+    addAssertion(html)
+    addAssertion(tagName)
+    addAssertion(text)
 
     overwriteProperty(empty)
-    overwriteMethod(empty, 'blank')
+    addAssertion(empty, 'blank')
 
     overwriteProperty(exist)
-    overwriteMethod(exist, 'present')
+    addAssertion(exist, 'present')
 
     overwriteChainableMethod(contain)
   }

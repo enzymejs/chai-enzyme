@@ -30,5 +30,11 @@ describe('#blank', () => {
         expect(wrapper.find('#parent')).to.be.blank()
       }).to.throw(`to be empty`)
     })
+
+    it('fails when the actual is undefined', () => {
+      expect(() => {
+        expect(undefined).to.be.blank()
+      }).to.throw()
+    })
   })
 })
