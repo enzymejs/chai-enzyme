@@ -1,4 +1,3 @@
-import wrap from './wrap'
 import printDebug from './debug'
 
 import checked from './assertions/checked'
@@ -18,123 +17,39 @@ import tagName from './assertions/tagName'
 import text from './assertions/text'
 import value from './assertions/value'
 import exactly from './chains/exactly'
+import ChaiWrapper from './ChaiWrapper'
 
 export default function (debug = printDebug) {
   return function (chai, utils) {
-    const Assertion = chai.Assertion
-    const {flag, inspect} = utils
+    const chaiWrapper = new ChaiWrapper(chai, utils, debug)
 
-    function wrapOverwriteAssertion (assertion, _super) {
-      return function (arg1, arg2) {
-        const wrapper = wrap(flag(this, 'object'))
+    chaiWrapper.addAssertion(generic('attr', 'attribute'), 'attr')
+    chaiWrapper.addAssertion(generic('data', 'data attribute'), 'data')
+    chaiWrapper.addAssertion(generic('style', 'CSS style property'), 'style')
+    chaiWrapper.addAssertion(generic('state', 'state'), 'state')
+    chaiWrapper.addAssertion(generic('prop', 'prop'), 'prop')
 
-        if (!wrapper) {
-          return _super.apply(this, arguments)
-        }
+    chaiWrapper.addAssertion(checked)
+    chaiWrapper.addAssertion(className)
+    chaiWrapper.addAssertion(disabled)
+    chaiWrapper.addAssertion(id)
+    chaiWrapper.addAssertion(selected)
+    chaiWrapper.addAssertion(value)
+    chaiWrapper.addAssertion(match)
+    chaiWrapper.addAssertion(descendants)
+    chaiWrapper.addAssertion(ref)
+    chaiWrapper.addAssertion(html)
+    chaiWrapper.addAssertion(tagName)
+    chaiWrapper.addAssertion(text)
 
-        assertion.call(this, {
-          markup: () => debug(wrapper),
-          sig: inspect(wrapper),
-          wrapper,
-          arg1,
-          arg2,
-          flag,
-          inspect
-        })
-      }
-    }
+    chaiWrapper.overwriteProperty(empty)
+    chaiWrapper.addAssertion(empty, 'blank')
 
-    function overwriteMethod (assertion, name) {
-      name = name || assertion.name
+    chaiWrapper.overwriteProperty(exist)
+    chaiWrapper.addAssertion(exist, 'present')
 
-      Assertion.overwriteMethod(name, function (_super) {
-        return wrapOverwriteAssertion(assertion, _super)
-      })
-    }
+    chaiWrapper.overwriteChainableMethod(contain)
 
-    function overwriteProperty (assertion, name) {
-      name = name || assertion.name
-
-      Assertion.overwriteProperty(name, function (_super) {
-        return wrapOverwriteAssertion(assertion, _super)
-      })
-    }
-
-    function overwriteChainableMethod (assertion, name) {
-      name = name || assertion.name
-
-      Assertion.overwriteChainableMethod(name, function (_super) {
-        return wrapOverwriteAssertion(assertion, _super)
-      }, function (_super) {
-        return function () {
-          _super.call(this)
-        }
-      })
-    }
-
-    function wrapAssertion (assertion) {
-      return function (arg1, arg2) {
-        const wrapper = wrap(flag(this, 'object'))
-        assertion.call(this, {
-          markup: () => debug(wrapper),
-          sig: inspect(wrapper),
-          wrapper,
-          arg1,
-          arg2,
-          flag,
-          inspect
-        })
-      }
-    }
-
-    function addMethod (assertion, name) {
-      name = name || assertion.name
-
-      Assertion.addMethod(name, wrapAssertion(assertion))
-    }
-
-    function addAssertion (assertion, name) {
-      name = name || assertion.name
-      if (chai.Assertion.prototype[name]) {
-        overwriteMethod(assertion, name)
-      } else {
-        addMethod(assertion, name)
-      }
-    }
-
-    function addChainableMethod (assertion, name) {
-      name = name || assertion.name
-
-      Assertion.addChainableMethod(name, wrapAssertion(assertion))
-    }
-
-    addAssertion(generic('attr', 'attribute'), 'attr')
-    addAssertion(generic('data', 'data attribute'), 'data')
-    addAssertion(generic('style', 'CSS style property'), 'style')
-    addAssertion(generic('state', 'state'), 'state')
-    addAssertion(generic('prop', 'prop'), 'prop')
-
-    addAssertion(checked)
-    addAssertion(className)
-    addAssertion(disabled)
-    addAssertion(id)
-    addAssertion(selected)
-    addAssertion(value)
-    addAssertion(match)
-    addAssertion(descendants)
-    addAssertion(ref)
-    addAssertion(html)
-    addAssertion(tagName)
-    addAssertion(text)
-
-    overwriteProperty(empty)
-    addAssertion(empty, 'blank')
-
-    overwriteProperty(exist)
-    addAssertion(exist, 'present')
-
-    overwriteChainableMethod(contain)
-
-    addChainableMethod(exactly)
+    chaiWrapper.addChainableMethod(exactly)
   }
 }
