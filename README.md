@@ -750,7 +750,7 @@ class Fixture extends React.Component {
     return (
       <div>
         <ul>
-          <li><User index={1} /></li>
+          <li><User index={1} objectProp={{foo: 'bar'}} /></li>
           <li><User index={2} /></li>
         </ul>
       </div>
@@ -768,6 +768,7 @@ expect(wrapper.find(User).first()).to.have.prop('index', 1)
 expect(wrapper.find(User).first()).to.not.have.prop('index', 2)
 
 expect(wrapper.find(User).first()).to.have.prop('index').equal(1)
+expect(wrapper.find(User).first()).to.have.prop('objectProp').deep.equal({foo: 'bar'})
 ```
 
 ## Development
