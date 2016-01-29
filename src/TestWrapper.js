@@ -16,7 +16,11 @@ export default class TestWrapper {
   }
 
   hasDescendants (selector) {
-    return this.wrapper.find(selector).length > 0
+    return this.getDescendantsCount(selector) > 0
+  }
+
+  getDescendantsCount (selector) {
+    return this.wrapper.find(selector).length
   }
 
   state (key) {

@@ -17,13 +17,14 @@ import selected from './assertions/selected'
 import tagName from './assertions/tagName'
 import text from './assertions/text'
 import value from './assertions/value'
+import exactly from './chains/exactly'
 
 export default function (debug = printDebug) {
   return function (chai, utils) {
     const Assertion = chai.Assertion
     const {flag, inspect} = utils
 
-    function wrapAssertion (assertion, _super) {
+    function wrapOverwriteAssertion (assertion, _super) {
       return function (arg1, arg2) {
         const wrapper = wrap(flag(this, 'object'))
 
@@ -47,7 +48,7 @@ export default function (debug = printDebug) {
       name = name || assertion.name
 
       Assertion.overwriteMethod(name, function (_super) {
-        return wrapAssertion(assertion, _super)
+        return wrapOverwriteAssertion(assertion, _super)
       })
     }
 
@@ -55,7 +56,7 @@ export default function (debug = printDebug) {
       name = name || assertion.name
 
       Assertion.overwriteProperty(name, function (_super) {
-        return wrapAssertion(assertion, _super)
+        return wrapOverwriteAssertion(assertion, _super)
       })
     }
 
@@ -63,7 +64,7 @@ export default function (debug = printDebug) {
       name = name || assertion.name
 
       Assertion.overwriteChainableMethod(name, function (_super) {
-        return wrapAssertion(assertion, _super)
+        return wrapOverwriteAssertion(assertion, _super)
       }, function (_super) {
         return function () {
           _super.call(this)
@@ -71,10 +72,8 @@ export default function (debug = printDebug) {
       })
     }
 
-    function addMethod (assertion, name) {
-      name = name || assertion.name
-
-      Assertion.addMethod(name, function (arg1, arg2) {
+    function wrapAssertion (assertion) {
+      return function (arg1, arg2) {
         const wrapper = wrap(flag(this, 'object'))
         assertion.call(this, {
           markup: () => debug(wrapper),
@@ -85,7 +84,13 @@ export default function (debug = printDebug) {
           flag,
           inspect
         })
-      })
+      }
+    }
+
+    function addMethod (assertion, name) {
+      name = name || assertion.name
+
+      Assertion.addMethod(name, wrapAssertion(assertion))
     }
 
     function addAssertion (assertion, name) {
@@ -95,6 +100,12 @@ export default function (debug = printDebug) {
       } else {
         addMethod(assertion, name)
       }
+    }
+
+    function addChainableMethod (assertion, name) {
+      name = name || assertion.name
+
+      Assertion.addChainableMethod(name, wrapAssertion(assertion))
     }
 
     addAssertion(generic('attr', 'attribute'), 'attr')
@@ -123,5 +134,7 @@ export default function (debug = printDebug) {
     addAssertion(exist, 'present')
 
     overwriteChainableMethod(contain)
+
+    addChainableMethod(exactly)
   }
 }
