@@ -307,6 +307,17 @@ expect(wrapper.find('#parent')).to.not.be.blank()
 
 expect(wrapper.find('#child')).to.be.empty // an alias
 expect(wrapper.find('#parent')).to.not.be.empty // an alias
+
+class NullFixture extends React.Component {
+  render () {
+    return null
+  }
+}
+
+const nullWrapper = moun(<NullFixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.be.blank()
+expect(wrapper).to.be.empty // an alias
 ```
 
 #### `present()`
@@ -334,6 +345,17 @@ const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
 expect(wrapper.find('#parent')).be.present()
 expect(wrapper.find('#parent')).to.exist // an alias
+
+class NullFixture extends React.Component {
+  render () {
+    return null
+  }
+}
+
+const nullWrapper = moun(<NullFixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.be.present()
+expect(wrapper).to.exist // an alias
 ```
 
 #### `html(str)`
