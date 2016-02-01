@@ -18,7 +18,7 @@ import tagName from './assertions/tagName'
 import text from './assertions/text'
 import value from './assertions/value'
 
-export default function (debug = printDebug) {
+module.exports = function (debug = printDebug) {
   return function (chai, utils) {
     const Assertion = chai.Assertion
     const {flag, inspect} = utils
