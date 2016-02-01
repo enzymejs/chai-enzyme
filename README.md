@@ -246,6 +246,37 @@ expect(wrapper.find('#child')).to.have.descendants('#last')
 expect(wrapper).to.not.have.descendants('#root1')
 ```
 
+#### `exactly()`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| yes    | yes   | yes     |
+
+
+Assert that the wrapper contains a exact amount of descendants matching the given selector:
+
+```js
+import React from 'react'
+import {mount, render, shallow} from 'enzyme'
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <div id='root'>
+        <span id='child'>
+          <span class='item'></span>
+          <span class='item'></span>
+        </span>
+      </div>
+    )
+  }
+}
+
+const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.have.exactly(2).descendants('.item')
+```
+
 #### `disabled()`
 
 | render | mount | shallow |
