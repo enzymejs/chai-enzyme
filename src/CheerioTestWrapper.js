@@ -16,6 +16,14 @@ export default class CheerioTestWrapper extends TestWrapper {
     return 'the node in <??? />'
   }
 
+  isEmpty () {
+    if (this.tagName() === 'noscript') {
+      return true
+    }
+
+    return super.isEmpty()
+  }
+
   attr (name) {
     return this.el.attr(name)
   }
