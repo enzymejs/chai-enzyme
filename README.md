@@ -67,7 +67,7 @@ chai.use(chaiEnzyme())
 You can also provide a custom debug function that can print useful information
 about the `wrapper` that you are using.
 
-The default one that chai-enzyme comes with will pretty print the HTML of the
+The default one that chai-enzyme comes with, will pretty print the HTML of the
 wrapper under test.
 
 ```shell
@@ -83,7 +83,7 @@ wrapper under test.
      ---------- this is where the debug output ends ----------
 ```
 
-Here is how you can implement and configure one yourself:
+Here is how you can implement and configure one for yourself:
 
 ```js
 function myAwesomeDebug (wrapper) {
@@ -107,7 +107,7 @@ to the next assertion that responds to the given method.
 
 Note that not all assertions work with every rendering strategy.
 
-If you are wondering what rendering machanism to use when, refer to [enzyme's
+If you are wondering what rendering mechanism to use when, refer to [enzyme's
 documentation](https://github.com/airbnb/enzyme).
 
 #### `checked()`
@@ -253,7 +253,7 @@ expect(wrapper).to.not.have.descendants('#root1')
 | yes    | yes   | yes     |
 
 
-Assert that the wrapper contains a exact amount of descendants matching the given selector:
+Assert that the wrapper contains an exact amount of descendants matching the given selector:
 
 ```js
 import React from 'react'
@@ -396,7 +396,7 @@ expect(wrapper).to.exist // an alias
 | yes    | yes   | yes     |
 
 
-Assert that the given wrapper has given html:
+Assert that the wrapper has given html:
 
 ```js
 import React from 'react'
@@ -428,7 +428,7 @@ expect(wrapper.find('#child')).to.have.html().match(/Test/)
 | yes    | yes   | yes     |
 
 
-Assert that the given wrapper has given ID attribute:
+Assert that the wrapper has given ID attribute:
 
 ```js
 import React from 'react'
@@ -457,7 +457,7 @@ expect(wrapper).to.not.have.id('child')
 | yes    | yes   | yes     |
 
 
-Assert that the given wrapper matches given selector:
+Assert that the wrapper matches given selector:
 
 ```js
 import React from 'react'
@@ -639,7 +639,7 @@ expect(wrapper.find('input')).to.not.have.value('other')
 | yes    | yes   | yes     |
 
 
-Assert that the given wrapper has given attribute [with value]:
+Assert that the wrapper has given attribute [with value]:
 
 ```js
 import React from 'react'
