@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/chai-enzyme.svg)](https://www.npmjs.com/package/chai-enzyme) [![License](https://img.shields.io/npm/l/chai-enzyme.svg)](https://www.npmjs.com/package/chai-enzyme) [![Build Status](https://travis-ci.org/producthunt/chai-enzyme.svg)](https://travis-ci.org/producthunt/chai-enzyme)
 
-[chai.js](https://github.com/chaijs/chai) assertions for [enzyme](https://github.com/airbnb/enzyme/)
+[Chai.js](https://github.com/chaijs/chai) assertions for [enzyme](https://github.com/airbnb/enzyme/).
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@
 
 ## Installation
 
-chai-enzyme depends on:
+`chai-enzyme` depends on:
 
 ```js
 "peerDependencies": {
