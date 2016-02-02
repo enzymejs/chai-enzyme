@@ -1,7 +1,7 @@
 0.4.0 / Unreleased
 ==================
 
-  * [feature]
+  * [feature] `exactly` matcher
   * [fix]
 
 0.3.0 / February 1 2016
