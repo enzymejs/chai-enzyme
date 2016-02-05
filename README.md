@@ -40,7 +40,6 @@
 
 ```js
 "peerDependencies": {
-  "cheerio": "^0.19.0",
   "enzyme": "1.x",
   "chai": "3.x"
 }
