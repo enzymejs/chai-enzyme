@@ -25,8 +25,9 @@
     "test": "npm run test:lint && npm run test:unit"
   },
   "peerDependencies": {
-    "chai": "3.x",
-    "enzyme": "1.x"
+    "cheerio": "^0.19.0",
+    "enzyme": "1.x",
+    "chai": "3.x"
   },
   "keywords": [
     "javascript",
