@@ -62,7 +62,7 @@
     "react-dom": "^0.14.0",
     "rimraf": "^2.5.0",
     "snazzy": "^2.0.1",
-    "standard": "^5.4.1"
+    "standard": "^6.0.3"
   },
   "standard": {
     "parser": "babel-eslint",
