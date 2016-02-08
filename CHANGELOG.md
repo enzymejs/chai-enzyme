@@ -1,8 +1,8 @@
-0.4.0 / Unreleased
-==================
+0.4.0 / February 8 2016
+=======================
 
   * [feature] `exactly` matcher
-  * [fix]
+  * [fix] loosen cheerio dependency
 
 0.3.0 / February 1 2016
 =======================
