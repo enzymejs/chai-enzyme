@@ -25,11 +25,11 @@ describe('#tagName', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.tagName('a')
-      }).to.throw(`to have a 'a' tag name, but it has 'div'`)
+      }).to.throw("to have a 'a' tag name, but it has 'div'")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.tagName('a')
-      }).to.throw(`to have a 'a' tag name, but it has 'span'`)
+      }).to.throw("to have a 'a' tag name, but it has 'span'")
     })
 
     it('fails when the actual is undefined', () => {

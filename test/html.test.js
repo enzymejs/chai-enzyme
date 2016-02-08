@@ -23,11 +23,11 @@ describe('#html', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#child')).to.have.html('<span id="child">Test 1</span>')
-      }).to.throw(`to be '<span id`)
+      }).to.throw("to be '<span id")
 
       expect(() => {
         expect(wrapper.find('#child')).to.not.have.html('<span id="child">Test</span>')
-      }).to.throw(`not to be '<span id`)
+      }).to.throw("not to be '<span id")
     })
 
     it('fails when the actual is undefined', () => {

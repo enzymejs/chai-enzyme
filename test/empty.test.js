@@ -24,11 +24,11 @@ describe('#empty', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#child')).to.not.be.empty
-      }).to.throw(`not to be empty`)
+      }).to.throw('not to be empty')
 
       expect(() => {
         expect(wrapper.find('#parent')).to.be.empty
-      }).to.throw(`to be empty`)
+      }).to.throw('to be empty')
     })
   })
 })

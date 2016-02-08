@@ -24,11 +24,11 @@ describe('#checked', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#not')).to.be.checked()
-      }).to.throw(`to be checked`)
+      }).to.throw('to be checked')
 
       expect(() => {
         expect(wrapper.find('#checked')).to.not.be.checked()
-      }).to.throw(`not to be checked`)
+      }).to.throw('not to be checked')
     })
 
     it('fails when the actual is undefined', () => {

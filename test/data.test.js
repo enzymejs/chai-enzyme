@@ -25,19 +25,19 @@ describe('#data', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.data('color')
-      }).to.throw(`to have a 'color' data attribute`)
+      }).to.throw("to have a 'color' data attribute")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.data('border')
-      }).to.throw(`to have a 'border' data attribute`)
+      }).to.throw("to have a 'border' data attribute")
 
       expect(() => {
         expect(wrapper).to.not.have.data('name')
-      }).to.throw(`not to have a 'name' data attribute`)
+      }).to.throw("not to have a 'name' data attribute")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.have.data('name')
-      }).to.throw(`not to have a 'name' data attribute`)
+      }).to.throw("not to have a 'name' data attribute")
     })
 
     it('fails when the actual is undefined', () => {
@@ -61,19 +61,19 @@ describe('#data', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.data('name', 'red')
-      }).to.throw(`to have a 'name' data attribute`)
+      }).to.throw("to have a 'name' data attribute")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.data('name', 'blue')
-      }).to.throw(`to have a 'name' data attribute`)
+      }).to.throw("to have a 'name' data attribute")
 
       expect(() => {
         expect(wrapper).to.not.have.data('name', 'root')
-      }).to.throw(`not to have a 'name' data attribute`)
+      }).to.throw("not to have a 'name' data attribute")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.have.data('name', 'child')
-      }).to.throw(`not to have a 'name' data attribute`)
+      }).to.throw("not to have a 'name' data attribute")
     })
   })
 

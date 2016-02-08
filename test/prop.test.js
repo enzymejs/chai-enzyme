@@ -38,11 +38,11 @@ describe('#prop', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find(User).first()).to.have.prop('invalid')
-      }).to.throw(`to have a 'invalid' prop`)
+      }).to.throw("to have a 'invalid' prop")
 
       expect(() => {
         expect(wrapper.find(User).first()).to.not.have.prop('index')
-      }).to.throw(`not to have a 'index' prop`)
+      }).to.throw("not to have a 'index' prop")
     }, { render: false })
   })
 
@@ -58,11 +58,11 @@ describe('#prop', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find(User).first()).to.have.prop('index', 2)
-      }).to.throw(`to have a 'index' prop with the value 2`)
+      }).to.throw("to have a 'index' prop with the value 2")
 
       expect(() => {
         expect(wrapper.find(User).first()).to.not.have.prop('index', 1)
-      }).to.throw(`not to have a 'index' prop with the value 1`)
+      }).to.throw("not to have a 'index' prop with the value 1")
     }, { render: false })
 
     it('fails when the actual is undefined', () => {

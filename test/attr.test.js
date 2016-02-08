@@ -33,11 +33,11 @@ describe('#attr', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.attr('disabled')
-      }).to.throw(`to have a 'disabled' attr`)
+      }).to.throw("to have a 'disabled' attr")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.attr('disabled')
-      }).to.throw(`to have a 'disabled' attr`)
+      }).to.throw("to have a 'disabled' attr")
     })
   })
 
@@ -55,11 +55,11 @@ describe('#attr', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.attr('id', 'invalid')
-      }).to.throw(`to have a 'id' attr`)
+      }).to.throw("to have a 'id' attr")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.attr('id', 'invalid')
-      }).to.throw(`to have a 'id' attr`)
+      }).to.throw("to have a 'id' attr")
     })
   })
 

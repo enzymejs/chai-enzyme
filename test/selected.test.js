@@ -24,11 +24,11 @@ describe('#selected', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#test2')).to.be.selected()
-      }).to.throw(`to be selected`)
+      }).to.throw('to be selected')
 
       expect(() => {
         expect(wrapper.find('#test1')).to.not.be.selected()
-      }).to.throw(`not to be selected`)
+      }).to.throw('not to be selected')
     }, { shallow: false })
 
     it('fails when the actual is undefined', () => {
