@@ -23,11 +23,11 @@ describe('#ref', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.ref('random')
-      }).to.throw(`to have a 'random' ref`)
+      }).to.throw("to have a 'random' ref")
 
       expect(() => {
         expect(wrapper).to.not.have.ref('test')
-      }).to.throw(`not to have a 'test' ref`)
+      }).to.throw("not to have a 'test' ref")
     }, { render: false, shallow: false })
 
     it('fails when the actual is undefined', () => {

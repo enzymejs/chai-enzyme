@@ -27,19 +27,19 @@ describe('#descendants', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.descendants('#root1')
-      }).to.throw(`to have descendants '#root1'`)
+      }).to.throw("to have descendants '#root1'")
 
       expect(() => {
         expect(wrapper.find('#child')).to.have.descendants('#root1')
-      }).to.throw(`to have descendants '#root1'`)
+      }).to.throw("to have descendants '#root1'")
 
       expect(() => {
         expect(wrapper).to.not.have.descendants('#root')
-      }).to.throw(`not to have descendants '#root'`)
+      }).to.throw("not to have descendants '#root'")
 
       expect(() => {
         expect(wrapper.find('#child')).to.not.have.descendants('#last')
-      }).to.throw(`not to have descendants '#last'`)
+      }).to.throw("not to have descendants '#last'")
     })
 
     it('fails when the actual is undefined', () => {

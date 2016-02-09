@@ -25,19 +25,19 @@ describe('#id', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.id('child')
-      }).to.throw(`to have a 'child' id`)
+      }).to.throw("to have a 'child' id")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.id('root')
-      }).to.throw(`to have a 'root' id`)
+      }).to.throw("to have a 'root' id")
 
       expect(() => {
         expect(wrapper).to.not.id('root')
-      }).to.throw(`not to have a 'root' id`)
+      }).to.throw("not to have a 'root' id")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.have.id('child')
-      }).to.throw(`not to have a 'child' id`)
+      }).to.throw("not to have a 'child' id")
     })
 
     it('fails when the actual is undefined', () => {

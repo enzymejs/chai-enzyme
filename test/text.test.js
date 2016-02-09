@@ -23,11 +23,11 @@ describe('#text', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#child')).to.have.text('Other text')
-      }).to.throw(`to have text 'Other text'`)
+      }).to.throw("to have text 'Other text'")
 
       expect(() => {
         expect(wrapper.find('#child')).to.not.have.text('Test')
-      }).to.throw(`not to have text 'Test'`)
+      }).to.throw("not to have text 'Test'")
     })
 
     it('chains', (wrapper) => {

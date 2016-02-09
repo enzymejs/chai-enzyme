@@ -15,7 +15,7 @@ describe('#blank', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.not.be.blank()
-      }).to.throw(`not to be empty`)
+      }).to.throw('not to be empty')
     })
   })
 })
@@ -29,7 +29,7 @@ describe('#present', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.not.be.present()
-      }).to.throw(`not to exist`)
+      }).to.throw('not to exist')
     })
   })
 })

@@ -25,19 +25,19 @@ describe('#match', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#root')).to.match('#child')
-      }).to.throw(`to match '#child'`)
+      }).to.throw("to match '#child'")
 
       expect(() => {
         expect(wrapper.find('span')).to.match('#root')
-      }).to.throw(`to match '#root'`)
+      }).to.throw("to match '#root'")
 
       expect(() => {
         expect(wrapper.find('#root')).to.not.match('#root')
-      }).to.throw(`not to match '#root'`)
+      }).to.throw("not to match '#root'")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.match('#child')
-      }).to.throw(`not to match '#child'`)
+      }).to.throw("not to match '#child'")
     })
   })
 })

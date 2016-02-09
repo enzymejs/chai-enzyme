@@ -25,19 +25,19 @@ describe('#className', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.className('child')
-      }).to.throw(`to have a 'child' class`)
+      }).to.throw("to have a 'child' class")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.className('root')
-      }).to.throw(`to have a 'root' class`)
+      }).to.throw("to have a 'root' class")
 
       expect(() => {
         expect(wrapper).to.not.className('root')
-      }).to.throw(`not to have a 'root' class`)
+      }).to.throw("not to have a 'root' class")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.have.className('child')
-      }).to.throw(`not to have a 'child' class`)
+      }).to.throw("not to have a 'child' class")
     })
 
     it('fails when the actual is undefined', () => {

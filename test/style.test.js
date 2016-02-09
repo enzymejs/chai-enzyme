@@ -25,19 +25,19 @@ describe('#style', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.style('color')
-      }).to.throw(`to have a 'color' CSS style property`)
+      }).to.throw("to have a 'color' CSS style property")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.style('border')
-      }).to.throw(`to have a 'border' CSS style property`)
+      }).to.throw("to have a 'border' CSS style property")
 
       expect(() => {
         expect(wrapper).to.not.have.style('border')
-      }).to.throw(`not to have a 'border' CSS style property`)
+      }).to.throw("not to have a 'border' CSS style property")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.have.style('color')
-      }).to.throw(`not to have a 'color' CSS style property`)
+      }).to.throw("not to have a 'color' CSS style property")
     })
 
     it('fails when the actual is undefined', () => {
@@ -61,19 +61,19 @@ describe('#style', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.have.style('color', 'red')
-      }).to.throw(`to have a 'color' CSS style property`)
+      }).to.throw("to have a 'color' CSS style property")
 
       expect(() => {
         expect(wrapper.find('span')).to.have.style('border', '2px')
-      }).to.throw(`to have a 'border' CSS style property`)
+      }).to.throw("to have a 'border' CSS style property")
 
       expect(() => {
         expect(wrapper).to.not.have.style('border', '1px')
-      }).to.throw(`not to have a 'border' CSS style property`)
+      }).to.throw("not to have a 'border' CSS style property")
 
       expect(() => {
         expect(wrapper.find('span')).to.not.have.style('color', 'red')
-      }).to.throw(`not to have a 'color' CSS style property`)
+      }).to.throw("not to have a 'color' CSS style property")
     })
   })
 

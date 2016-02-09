@@ -24,11 +24,11 @@ describe('#disabled', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper.find('#not')).to.be.disabled()
-      }).to.throw(`to be disabled`)
+      }).to.throw('to be disabled')
 
       expect(() => {
         expect(wrapper.find('#disabled')).to.not.be.disabled()
-      }).to.throw(`not to be disabled`)
+      }).to.throw('not to be disabled')
     })
 
     it('fails when the actual is undefined', () => {
