@@ -4,12 +4,18 @@ export default class CheerioTestWrapper extends TestWrapper {
   constructor (wrapper) {
     super()
     this.wrapper = wrapper
+  }
 
-    if (wrapper.first()['0'].type === 'root') {
-      this.el = wrapper.children().first()
-    } else {
-      this.el = wrapper.first()
+  get el () {
+    if (!this.__el) {
+      if (this.wrapper.first()['0'].type === 'root') {
+        this.__el = this.wrapper.children().first()
+      } else {
+        this.__el = this.wrapper.first()
+      }
     }
+
+    return this.__el
   }
 
   inspect () {
