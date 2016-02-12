@@ -6,7 +6,14 @@ export default class ReactTestWrapper extends TestWrapper {
   constructor (wrapper) {
     super()
     this.wrapper = wrapper
-    this.el = this.wrapper.single((n) => findDOMNode(n))
+  }
+
+  get el () {
+    if (!this.__el) {
+      this.__el = this.wrapper.single((n) => findDOMNode(n))
+    }
+
+    return this.__el
   }
 
   inspect () {

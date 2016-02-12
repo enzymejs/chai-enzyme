@@ -27,3 +27,21 @@ describe('#exist', () => {
     })
   })
 })
+
+describe('not#exist', () => {
+  describe('()', () => {
+    it('passes when the actual matches the expected', (wrapper) => {
+      expect(wrapper.find('#notfound')).to.not.exist
+    })
+
+    it('fails when the actual does not match the expected', (wrapper) => {
+      expect(() => {
+        expect(wrapper.find('#notfound')).to.exist
+      }).to.throw('to exist')
+    })
+
+    it('passes when the actual is undefined', () => {
+      expect(undefined).to.not.exist
+    })
+  })
+})
