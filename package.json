@@ -61,7 +61,7 @@
     "react-addons-test-utils": "^0.14.7",
     "react-dom": "^0.14.7",
     "rimraf": "^2.5.0",
-    "snazzy": "^2.0.1",
+    "snazzy": "^3.0.0",
     "standard": "^6.0.4"
   },
   "standard": {
