@@ -27,7 +27,7 @@
   "peerDependencies": {
     "chai": "3.x",
     "cheerio": "0.19.x || 0.20.x",
-    "enzyme": "1.x"
+    "enzyme": "1.x || 2.x"
   },
   "keywords": [
     "javascript",
@@ -49,12 +49,12 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.5.1",
-    "babel-eslint": "^5.0.0-beta9",
+    "babel-eslint": "^5.0.0",
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
-    "babel-register": "^6.5.1",
+    "babel-register": "^6.5.2",
     "chai": "^3.5.0",
-    "enzyme": "^1.5.0",
+    "enzyme": "^2.0.0",
     "jsdom": "^8.0.4",
     "mocha": "^2.4.5",
     "react": "^0.14.7",
@@ -62,7 +62,7 @@
     "react-dom": "^0.14.7",
     "rimraf": "^2.5.0",
     "snazzy": "^3.0.0",
-    "standard": "^6.0.4"
+    "standard": "^6.0.5"
   },
   "standard": {
     "parser": "babel-eslint",
