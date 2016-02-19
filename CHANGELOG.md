@@ -1,3 +1,9 @@
+0.4.1 / February 19 2016
+=======================
+
+  * [fix] loosen up peer dependencies
+  * [fix] Make the assertion messages lazy for shallow rendering
+
 0.4.0 / February 8 2016
 =======================
 
