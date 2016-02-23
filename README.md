@@ -59,7 +59,7 @@ $ npm install chai-enzyme --save-dev
 import chai from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 
-chai.use(chaiEnzyme())
+chai.use(chaiEnzyme()) // Note the invocation at the end
 ```
 
 ## Debug output in assertion exceptions
