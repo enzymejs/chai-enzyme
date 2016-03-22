@@ -347,8 +347,8 @@ class NullFixture extends React.Component {
 
 const nullWrapper = mount(<NullFixture />) // mount/render/shallow when applicable
 
-expect(wrapper).to.be.blank()
-expect(wrapper).to.be.empty // an alias
+expect(nullWrapper).to.be.blank()
+expect(nullWrapper).to.be.empty // an alias
 ```
 
 #### `present()`
@@ -385,8 +385,8 @@ class NullFixture extends React.Component {
 
 const nullWrapper = mount(<NullFixture />) // mount/render/shallow when applicable
 
-expect(wrapper).to.be.present()
-expect(wrapper).to.exist // an alias
+expect(nullWrapper).to.be.present()
+expect(nullWrapper).to.exist // an alias
 ```
 
 #### `html(str)`
