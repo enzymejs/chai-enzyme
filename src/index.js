@@ -29,27 +29,27 @@ module.exports = function (debug = printDebug) {
     chaiWrapper.addAssertion(generic('state', 'state'), 'state')
     chaiWrapper.addAssertion(generic('prop', 'prop'), 'prop')
 
-    chaiWrapper.addAssertion(checked)
-    chaiWrapper.addAssertion(className)
-    chaiWrapper.addAssertion(disabled)
-    chaiWrapper.addAssertion(id)
-    chaiWrapper.addAssertion(selected)
-    chaiWrapper.addAssertion(value)
-    chaiWrapper.addAssertion(match)
-    chaiWrapper.addAssertion(descendants)
-    chaiWrapper.addAssertion(ref)
-    chaiWrapper.addAssertion(html)
-    chaiWrapper.addAssertion(tagName)
-    chaiWrapper.addAssertion(text)
+    chaiWrapper.addAssertion(checked, 'checked')
+    chaiWrapper.addAssertion(className, 'className')
+    chaiWrapper.addAssertion(disabled, 'disabled')
+    chaiWrapper.addAssertion(id, 'id')
+    chaiWrapper.addAssertion(selected, 'selected')
+    chaiWrapper.addAssertion(value, 'value')
+    chaiWrapper.addAssertion(match, 'match')
+    chaiWrapper.addAssertion(descendants, 'descendants')
+    chaiWrapper.addAssertion(ref, 'ref')
+    chaiWrapper.addAssertion(html, 'html')
+    chaiWrapper.addAssertion(tagName, 'tagName')
+    chaiWrapper.addAssertion(text, 'text')
 
-    chaiWrapper.overwriteProperty(empty)
+    chaiWrapper.overwriteProperty(empty, 'empty')
     chaiWrapper.addAssertion(empty, 'blank')
 
-    chaiWrapper.overwriteProperty(exist)
+    chaiWrapper.overwriteProperty(exist, 'exist')
     chaiWrapper.addAssertion(exist, 'present')
 
-    chaiWrapper.overwriteChainableMethod(contain)
+    chaiWrapper.overwriteChainableMethod(contain, 'contain')
 
-    chaiWrapper.addChainableMethod(exactly)
+    chaiWrapper.addChainableMethod(exactly, 'exactly')
   }
 }
