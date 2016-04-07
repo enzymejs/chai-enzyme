@@ -25,8 +25,6 @@ export default class ChaiWrapper {
    */
 
   addAssertion (assertion, name) {
-    name = name || assertion.name
-
     if (this.chai.Assertion.prototype[name]) {
       this._overwriteMethod(assertion, name)
     } else {
@@ -42,8 +40,6 @@ export default class ChaiWrapper {
    */
 
   addChainableMethod (assertion, name) {
-    name = name || assertion.name
-
     this.Assertion.addChainableMethod(name, this._wrapAssertion(assertion, this))
   }
 
@@ -55,8 +51,6 @@ export default class ChaiWrapper {
    */
 
   overwriteProperty (assertion, name) {
-    name = name || assertion.name
-
     const _wrapOverwriteAssertion = this._wrapOverwriteAssertion
     const chaiWrapper = this
 
