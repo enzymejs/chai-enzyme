@@ -1,14 +1,20 @@
-0.4.1 / February 19 2016
-=======================
+0.4.2 / April 8 2016
+====================
 
-  * [fix] loosen up peer dependencies
+  * [fix] Support React 15.0.x
+  * [fix] Fixes a bug in IE, because function.name is not available
+
+0.4.1 / February 19 2016
+========================
+
+  * [fix] Loosen up peer dependencies
   * [fix] Make the assertion messages lazy for shallow rendering
 
 0.4.0 / February 8 2016
 =======================
 
   * [feature] `exactly` matcher
-  * [fix] loosen cheerio dependency
+  * [fix] Loosen cheerio dependency
 
 0.3.0 / February 1 2016
 =======================
