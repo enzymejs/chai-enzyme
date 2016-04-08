@@ -62,7 +62,7 @@ export default class ReactTestWrapper extends TestWrapper {
   }
 
   value () {
-    return this.attr('value')
+    return this.el.value
   }
 
   isChecked () {

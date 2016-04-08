@@ -23,7 +23,10 @@ export default class CheerioTestWrapper extends TestWrapper {
   }
 
   isEmpty () {
-    if (this.tagName() === 'noscript') {
+    // React 0.14.x returns an element with tag name <noscript />, while
+    // 15.x returns no element at all.
+
+    if (this.tagName() === null || this.tagName() === 'noscript') {
       return true
     }
 
@@ -43,7 +46,13 @@ export default class CheerioTestWrapper extends TestWrapper {
   }
 
   tagName () {
-    return this.el[0].name
+    const el = this.el[0]
+
+    if (el) {
+      return el.name
+    }
+
+    return null
   }
 
   data (name) {
