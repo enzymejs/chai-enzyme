@@ -39,11 +39,11 @@ describe('#contain', () => {
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
         expect(wrapper).to.contain(<User index={3} />)
-      }).to.throw('to contain')
+      }).to.throw('to contain <User index={3} />')
 
       expect(() => {
         expect(wrapper).to.not.contain(<User index={2} />)
-      }).to.throw('not to contain')
+      }).to.throw('not to contain <User index={2} />')
     }, { render: false })
 
     it('fails when the actual is undefined', () => {
