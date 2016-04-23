@@ -8,6 +8,7 @@ import disabled from './assertions/disabled'
 import empty from './assertions/empty'
 import exist from './assertions/exist'
 import generic from './assertions/generic'
+import props from './assertions/props'
 import html from './assertions/html'
 import id from './assertions/id'
 import match from './assertions/match'
@@ -29,6 +30,7 @@ module.exports = function (debug = printDebug) {
     chaiWrapper.addAssertion(generic('state', 'state'), 'state')
     chaiWrapper.addAssertion(generic('prop', 'prop'), 'prop')
 
+    chaiWrapper.addAssertion(props, 'props')
     chaiWrapper.addAssertion(checked, 'checked')
     chaiWrapper.addAssertion(className, 'className')
     chaiWrapper.addAssertion(disabled, 'disabled')
