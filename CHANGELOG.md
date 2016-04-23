@@ -3,6 +3,7 @@ Unreleased
 
 * [fix] Fix cross-browser issue when using text assertions
 * [fix] Delegate to Enzyme wrapper `.is` for match assertions
+* [feature] props assertion
 
 0.5.2. / September 30 2016
 ==========================
