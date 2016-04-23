@@ -61,6 +61,10 @@ export default class ShallowTestWrapper extends TestWrapper {
   }
 
   value () {
+    if (this.tagName() === 'textarea') {
+      return this.el.val()
+    }
+
     return this.attr('value')
   }
 
