@@ -73,7 +73,6 @@ describe('#props', () => {
   })
 
   it('chains', (wrapper) => {
-    expect(wrapper.find(User).first()).to.have.props([ 'index' ]).deep.equal([ 1 ])
-    expect(wrapper.find(User).first()).to.have.props([ 'objectProp' ]).deep.equal([ {foo: 'bar'} ])
+    expect(wrapper.find(User).first()).to.have.props([ 'index', 'objectProp' ]).deep.equal([ 1, {foo: 'bar'} ])
   }, { render: false })
 })
