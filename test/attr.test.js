@@ -3,6 +3,7 @@ class Fixture extends React.Component {
     return (
       <div id='root'>
         <span id='child'>test</span>
+        <article itemScope>test2</article>
       </div>
     )
   }
@@ -28,6 +29,10 @@ describe('#attr', () => {
     it('passes negated when the actual does not match the expected', (wrapper) => {
       expect(wrapper).to.not.have.attr('disabled')
       expect(wrapper.find('span')).to.not.have.attr('disabled')
+    })
+
+    it('passes when the attribute exists without a value', (wrapper) => {
+      expect(wrapper.find('article')).to.have.attr('itemscope')
     })
 
     it('fails when the actual does not match the expected', (wrapper) => {

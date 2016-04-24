@@ -29,7 +29,8 @@ export default class ReactTestWrapper extends TestWrapper {
   }
 
   attr (name) {
-    return this.el.getAttribute(name) || undefined
+    const value = this.el.getAttribute(name)
+    return value !== null ? value : undefined
   }
 
   html () {
