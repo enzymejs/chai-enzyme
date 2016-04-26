@@ -41,6 +41,10 @@ export default class CheerioTestWrapper extends TestWrapper {
     return this.el.toString()
   }
 
+  innerHtml () {
+    return this.el.html()
+  }
+
   style (name) {
     return this.el.css(name)
   }
@@ -68,6 +72,10 @@ export default class CheerioTestWrapper extends TestWrapper {
   }
 
   value () {
+    if (this.tagName() === 'textarea') {
+      return this.innerHtml()
+    }
+
     return this.el.attr('value')
   }
 
