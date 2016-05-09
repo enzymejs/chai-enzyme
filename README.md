@@ -226,13 +226,19 @@ Assert that the wrapper contains a descendant matching the given selector:
 import React from 'react'
 import {mount, render, shallow} from 'enzyme'
 
+class User extends React.Component {
+  render () {
+    return (
+      <span>User</span>
+    )
+  }
+}
+
 class Fixture extends React.Component {
   render () {
     return (
       <div id='root'>
-        <span id='child'>
-          <span id='last'></span>
-        </span>
+        <User />
       </div>
     )
   }
@@ -241,7 +247,7 @@ class Fixture extends React.Component {
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
 expect(wrapper).to.have.descendants('#root')
-expect(wrapper.find('#child')).to.have.descendants('#last')
+expect(wrapper).to.have.descendants(User)
 
 expect(wrapper).to.not.have.descendants('#root1')
 ```
