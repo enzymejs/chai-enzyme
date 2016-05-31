@@ -851,7 +851,7 @@ $ npm run test:lint
 Tests:
 
 ```shell
-$ npm run test:tests
+$ npm run test:unit
 ```
 
 All:

@@ -76,6 +76,10 @@ export default class CheerioTestWrapper extends TestWrapper {
       return this.innerHtml()
     }
 
+    if (this.tagName() === 'select') {
+      return this.el.val()
+    }
+
     return this.el.attr('value')
   }
 
