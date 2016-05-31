@@ -65,6 +65,10 @@ export default class ShallowTestWrapper extends TestWrapper {
       return this.el.val()
     }
 
+    if (this.tagName() === 'select') {
+      return this.el.val()
+    }
+
     return this.attr('value')
   }
 
