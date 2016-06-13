@@ -1,3 +1,11 @@
+0.5.0 / June 13 2016
+====================
+
+  * [feature] Add textarea support for contain assertions
+  * [feature] Add select support for value assertions
+  * [feature] Improve failure message for contain assertions
+  * [fix] Truthy-ness values
+
 0.4.2 / April 8 2016
 ====================
 
