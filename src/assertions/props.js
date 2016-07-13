@@ -11,9 +11,9 @@ export default function ref ({ wrapper, markup, flag, arg1, sig }) {
     )
     flag(this, 'object', arg1.map((key) => actual[key]))
   } else {
-    const actualProps = Object.keys(arg1).reduce((copy, key) => {
-      copy[key] = actual[key]
-      return copy
+    const actualProps = Object.keys(arg1).reduce((props, key) => {
+      props[key] = actual[key]
+      return props
     }, {})
     this.assert(
       Object.keys(arg1).every((key) => actualProps[key] === arg1[key]),

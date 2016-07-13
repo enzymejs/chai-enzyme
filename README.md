@@ -30,6 +30,7 @@
     1. [`style(key, [val])`](#stylekey-val)
     1. [`state(key, [val])`](#statekey-val)
     1. [`prop(key, [val])`](#propkey-val)
+    1. [`props(key, [val])`](#propskey-val)
   1. [Development](#development)
   1. [Contributing](#contributing)
   1. [License](#license)
@@ -822,6 +823,55 @@ expect(wrapper.find(User).first()).to.not.have.prop('index', 2)
 
 expect(wrapper.find(User).first()).to.have.prop('index').equal(1)
 expect(wrapper.find(User).first()).to.have.prop('user').deep.equal({name: 'Jane'})
+```
+
+#### `props(key, [val])`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| no     | yes   | yes     |
+
+Assert that the wrapper has given set of props [with values]:
+
+```js
+import React from 'react'
+import {mount, render, shallow} from 'enzyme'
+
+class User extends React.Component {
+  render () {
+    return (
+      <span>User {this.props.index}</span>
+    )
+  }
+}
+
+User.propTypes = {
+  index: React.PropTypes.number.isRequired
+}
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <div>
+        <ul>
+          <li><User index={1}  user={{name: 'Jane'}} /></li>
+          <li><User index={2} /></li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper.find(User).first()).to.have.props([ 'index', 'user' ])
+expect(wrapper.find(User).first()).to.not.have.props([ 'invalid' ])
+
+
+expect(wrapper.find(User).first()).to.have.props({ index: 1 })
+expect(wrapper.find(User).first()).to.not.have.props({ index: 2 })
+
+expect(wrapper.find(User).first()).to.have.props([ 'index', 'user' ]).deep.equal([ 1, { name: 'Jane' } ])
 ```
 
 ## Development
