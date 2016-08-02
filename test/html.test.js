@@ -30,6 +30,13 @@ describe('#html', () => {
       }).to.throw("not to be '<span id")
     })
 
+    it('works with contain/include', (wrapper) => {
+      expect(wrapper.find('#child')).to.contain.html('<span id="child">Test</span>')
+      expect(wrapper.find('#child')).to.include.html('<span id="child">Test</span>')
+      expect(wrapper.find('#child')).to.not.contain.html('<span id="child">Test Other</span>')
+      expect(wrapper.find('#child')).to.not.include.html('<span id="child">Test Other</span>')
+    })
+
     it('fails when the actual is undefined', () => {
       expect(() => {
         expect(undefined).to.have.html('<span id="child">Test</span>')
