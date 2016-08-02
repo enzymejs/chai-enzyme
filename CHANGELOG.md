@@ -4,6 +4,7 @@ Unreleased
 * [fix] Fix cross-browser issue when using text assertions
 * [fix] Delegate to Enzyme wrapper `.is` for match assertions
 * [feature] props assertion
+* [feature] add contain/include support for html assertions
 
 0.5.2. / September 30 2016
 ==========================
