@@ -10,8 +10,7 @@ export default function html ({ wrapper, markup, flag, arg1, sig }) {
         arg1,
         actual
       )
-    }
-    else {
+    } else {
       this.assert(
         actual === arg1,
         () => 'expected ' + sig + ' to be #{exp}, but it was #{act} ' + markup(),
