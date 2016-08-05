@@ -14,6 +14,7 @@
     1. [`className(str)`](#classnamestr)
     1. [`contain(node)`](#containnode)
     1. [`descendants(selector)`](#descendantsselector)
+      1. [`exactly()`](#exactly)
     1. [`disabled()`](#disabled)
     1. [`blank()`](#blank)
     1. [`present()`](#present)
