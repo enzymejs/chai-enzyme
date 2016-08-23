@@ -1,3 +1,9 @@
+0.5.1 / August 23 2016
+====================
+
+ * [fix] Add `exactly` to TOC
+ * [fix] Bump html dependency for less deprecation warnings
+
 0.5.0 / June 13 2016
 ====================
 

@@ -1,6 +1,6 @@
 {
   "name": "chai-enzyme",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Chai.js assertions for enzyme",
   "homepage": "https://github.com/producthunt/chai-enzyme",
   "author": {
