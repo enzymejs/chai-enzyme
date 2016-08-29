@@ -95,4 +95,8 @@ export default class ShallowTestWrapper extends TestWrapper {
   hasRef () {
     throw new Error('shallow rendering does not support refs')
   }
+
+  type () {
+    return this.wrapper.type()
+  }
 }
