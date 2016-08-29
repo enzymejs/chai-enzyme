@@ -118,4 +118,8 @@ export default class CheerioTestWrapper extends TestWrapper {
   hasRef () {
     throw new Error('static rendering does not support refs')
   }
+
+  type () {
+    throw new Error('static rendering does not support `type`')
+  }
 }
