@@ -15,6 +15,7 @@ import ref from './assertions/ref'
 import selected from './assertions/selected'
 import tagName from './assertions/tagName'
 import text from './assertions/text'
+import type from './assertions/type'
 import value from './assertions/value'
 import exactly from './chains/exactly'
 import ChaiWrapper from './ChaiWrapper'
@@ -41,6 +42,7 @@ module.exports = function (debug = printDebug) {
     chaiWrapper.addAssertion(html, 'html')
     chaiWrapper.addAssertion(tagName, 'tagName')
     chaiWrapper.addAssertion(text, 'text')
+    chaiWrapper.addAssertion(type, 'type')
 
     chaiWrapper.overwriteProperty(empty, 'empty')
     chaiWrapper.addAssertion(empty, 'blank')
