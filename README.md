@@ -25,6 +25,7 @@
     1. [`selected()`](#selected)
     1. [`tagName(str)`](#tagnamestr)
     1. [`text(str)`](#textstr)
+    1. [`type(func)`](#typefunc)
     1. [`value(str)`](#valuestr)
     1. [`attr(key, [val])`](#attrkey-val)
     1. [`data(key, [val])`](#datakey-val)
@@ -609,6 +610,49 @@ expect(wrapper.find('#child')).to.not.have.text('Other text')
 expect(wrapper.find('#child')).to.not.include.text('Other text') // include is an alias of contain
 
 expect(wrapper.find('#child')).to.have.text().match(/Test/)
+```
+
+#### `type(func)`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| no     | no    | yes     |
+
+
+Assert that the given wrapper has a given type:
+
+```js
+import React from 'react'
+import {shallow} from 'enzyme'
+
+class Foo extends React.Component {
+  render () {
+    return (
+      <div>Foo</div>
+    )
+  }
+}
+
+class Bar extends React.Component {
+  render () {
+    return (
+      <div>Bar</div>
+    )
+  }
+}
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <Foo />
+    )
+  }
+}
+
+const wrapper = shallow(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.have.type(Foo)
+expect(wrapper).to.not.have.type(Bar)
 ```
 
 #### `value(str)`
