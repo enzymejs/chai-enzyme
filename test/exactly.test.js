@@ -3,15 +3,15 @@ class Fixture extends React.Component {
     return (
       <div id='root'>
         <div id='child'>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <div className='multiple'></div>
-          <span id='last'></span>
+          <div className='multiple' />
+          <div className='multiple' />
+          <div className='multiple' />
+          <div className='multiple' />
+          <div className='multiple' />
+          <div className='multiple' />
+          <div className='multiple' />
+          <div className='multiple' />
+          <span id='last' />
         </div>
       </div>
     )

@@ -12,7 +12,7 @@ class Fixture extends React.Component {
         <span id='child'>test</span>
         <video itemScope allowFullScreen={true} autoPlay={''} hidden={false} controls={null} loop={undefined}>test2</video>
         <audio role name={''} accessKey={false} spellCheck={null} rel={magicToStringObject}>test3</audio>
-        <tr rowSpan={0} rows={0} cols={'4'} size={'0'}></tr>
+        <tr rowSpan={0} rows={0} cols={'4'} size={'0'} />
       </div>
     )
     /* eslint-enable react/jsx-boolean-value */

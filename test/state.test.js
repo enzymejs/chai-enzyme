@@ -6,8 +6,7 @@ class Fixture extends React.Component {
 
   render () {
     return (
-      <div id='root'>
-      </div>
+      <div id='root' />
     )
   }
 }

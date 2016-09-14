@@ -3,7 +3,7 @@ class Fixture extends React.Component {
     return (
       <div id='root'>
         <span id='child'>
-          <span id='last'></span>
+          <span id='last' />
         </span>
       </div>
     )
