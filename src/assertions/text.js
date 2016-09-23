@@ -4,7 +4,7 @@ export default function text ({ wrapper, markup, flag, arg1, sig }) {
   if (undefined !== arg1) {
     if (flag(this, 'contains')) {
       this.assert(
-        actual.includes(String(arg1)),
+        actual.indexOf(String(arg1)) > -1,
         () => 'expected ' + sig + ' to contain text #{exp}, but it has #{act} ' + markup(),
         () => 'expected ' + sig + ' not to contain text #{exp}, but it has #{act} ' + markup(),
         arg1,
