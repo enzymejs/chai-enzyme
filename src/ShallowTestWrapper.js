@@ -73,11 +73,11 @@ export default class ShallowTestWrapper extends TestWrapper {
   }
 
   isChecked () {
-    return this.is(':checked')
+    return this.el.is(':checked')
   }
 
   isDisabled () {
-    return this.is(':disabled')
+    return this.el.is(':disabled')
   }
 
   isSelected () {
@@ -85,7 +85,7 @@ export default class ShallowTestWrapper extends TestWrapper {
   }
 
   is (selector) {
-    return this.el.is(selector)
+    return this.wrapper.is(selector)
   }
 
   hasNode (node) {
