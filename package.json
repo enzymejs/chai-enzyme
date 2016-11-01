@@ -80,6 +80,6 @@
   },
   "dependencies": {
     "html": "1.0.0",
-    "react-element-to-jsx-string": "^3.0.0"
+    "react-element-to-jsx-string": "^4.0.0"
   }
 }
