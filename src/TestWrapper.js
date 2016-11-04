@@ -31,6 +31,10 @@ export default class TestWrapper {
     return this.wrapper.prop(key)
   }
 
+  props () {
+    return this.wrapper.props()
+  }
+
   text () {
     return this.wrapper.text()
   }
