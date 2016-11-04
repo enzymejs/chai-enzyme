@@ -616,7 +616,7 @@ expect(wrapper.find('#child')).to.have.text().match(/Test/)
 
 | render | mount | shallow |
 | -------|-------|-------- |
-| no     | no    | yes     |
+| no     | yes   | yes     |
 
 
 Assert that the given wrapper has a given type:
@@ -649,10 +649,14 @@ class Fixture extends React.Component {
   }
 }
 
-const wrapper = shallow(<Fixture />) // mount/render/shallow when applicable
+const shallowWrapper = shallow(<Fixture />)
+const mountWrapper = mount(<Fixture />)
 
-expect(wrapper).to.have.type(Foo)
-expect(wrapper).to.not.have.type(Bar)
+expect(shallowWrapper).to.have.type(Foo)
+expect(shallowWrapper).to.not.have.type(Bar)
+
+expect(mountWrapper).to.have.type(Fixture)
+expect(mountWrapper).to.not.have.type(Bar)
 ```
 
 #### `value(str)`

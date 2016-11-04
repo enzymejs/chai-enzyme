@@ -92,6 +92,6 @@ export default class ReactTestWrapper extends TestWrapper {
   }
 
   type () {
-    throw new Error('full DOM rendering does not support `type` yet')
+    return this.wrapper.type()
   }
 }
