@@ -90,4 +90,8 @@ export default class ReactTestWrapper extends TestWrapper {
   hasRef (ref) {
     return !!this.wrapper.instance().refs[ref]
   }
+
+  type () {
+    throw new Error('full DOM rendering does not support `type` yet')
+  }
 }
