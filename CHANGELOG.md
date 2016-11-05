@@ -1,18 +1,19 @@
-Unreleased
-==========
+0.6.0 / November 5 2016
+======================
 
 * [fix] Fix cross-browser issue when using text assertions
 * [fix] Delegate to Enzyme wrapper `.is` for match assertions
 * [feature] props assertion
 * [feature] add contain/include support for html assertions
+* [feature] type assertion
 
-0.5.2. / September 30 2016
-==========================
+0.5.2 / September 30 2016
+=========================
 
  * [fix] Loosen up cheerio peer dependency
 
 0.5.1 / August 23 2016
-====================
+======================
 
  * [fix] Add `exactly` to TOC
  * [fix] Bump html dependency for less deprecation warnings

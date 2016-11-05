@@ -44,7 +44,7 @@
 ```js
 "peerDependencies": {
   "chai": "3.x",
-  "cheerio": "0.19.x || 0.20.x",
+  "cheerio": "0.19.x || 0.20.x || 0.22.x",
   "enzyme": "1.x || 2.x"
 }
 ```
