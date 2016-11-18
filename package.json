@@ -27,7 +27,10 @@
   "peerDependencies": {
     "chai": "3.x",
     "cheerio": "0.19.x || 0.20.x || 0.22.x",
-    "enzyme": "1.x || 2.x"
+    "enzyme": "1.x || 2.x",
+    "react": "^0.14.0 || ^15.0.0-0",
+    "react-addons-test-utils": "^0.14.0 || ^15.0.0-0",
+    "react-dom": "^0.14.0 || ^15.0.0-0"
   },
   "keywords": [
     "javascript",
@@ -79,7 +82,7 @@
     ]
   },
   "dependencies": {
-    "html": "1.0.0",
+    "html": "^1.0.0",
     "react-element-to-jsx-string": "^5.0.0"
   }
 }
