@@ -160,6 +160,12 @@ export default class ChaiWrapper {
         inspect
       }
 
+      /**
+       * Checking the length of the arguments array to make
+       * sure that we have a defined argument assigned to arg2.
+       * By default, 'undefined' is assigned to arg2 if no specific arguments exist...
+       *
+       */
       if (arguments.length > 1) {
         config.arg2 = arg2
       }
