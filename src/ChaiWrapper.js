@@ -151,16 +151,20 @@ export default class ChaiWrapper {
 
     return function (arg1, arg2) {
       const wrapper = wrap(flag(this, 'object'))
-
-      assertion.call(this, {
+      const config = {
         markup: () => debug(wrapper),
         sig: inspect(wrapper),
         wrapper,
         arg1,
-        arg2,
         flag,
         inspect
-      })
+      }
+
+      if (arguments.length > 1) {
+        config.arg2 = arg2
+      }
+
+      assertion.call(this, config)
     }
   }
 

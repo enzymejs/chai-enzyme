@@ -133,6 +133,10 @@ describe('#attr', () => {
       expect(() => {
         expect(wrapper.find('span')).to.have.attr('id', 'invalid')
       }).to.throw("to have a 'id' attr")
+
+      expect(() => {
+        expect(wrapper).to.have.attr('id', undefined)
+      }).to.throw("to have a 'id' attr")
     })
 
     describe('HAS_BOOLEAN_VALUE attrs', () => {

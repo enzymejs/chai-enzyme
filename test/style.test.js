@@ -74,6 +74,10 @@ describe('#style', () => {
       expect(() => {
         expect(wrapper.find('span')).to.not.have.style('color', 'red')
       }).to.throw("not to have a 'color' CSS style property")
+
+      expect(() => {
+        expect(wrapper).to.have.style('color', undefined)
+      }).to.throw("to have a 'color' CSS style property")
     })
   })
 

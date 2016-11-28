@@ -63,6 +63,10 @@ describe('#prop', () => {
       expect(() => {
         expect(wrapper.find(User).first()).to.not.have.prop('index', 1)
       }).to.throw("not to have a 'index' prop with the value 1")
+
+      expect(() => {
+        expect(wrapper.find(User).first()).to.have.prop('index', undefined)
+      }).to.throw("to have a 'index' prop with the value undefined")
     }, { render: false })
 
     it('fails when the actual is undefined', () => {

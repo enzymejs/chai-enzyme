@@ -1,8 +1,9 @@
 export default function generic (assertion, desc) {
-  return function ({ wrapper, markup, flag, inspect, arg1, arg2, sig }) {
+  return function (args) {
+    const { wrapper, markup, flag, inspect, arg1, arg2, sig } = args
     const actual = wrapper[assertion](arg1)
 
-    if (!flag(this, 'negate') || undefined === arg2) {
+    if (!flag(this, 'negate') || Object.keys(args).indexOf('arg2') === -1) {
       this.assert(
         undefined !== actual,
         () => 'expected ' + sig + ' to have a #{exp} ' + desc + markup(),
@@ -11,7 +12,7 @@ export default function generic (assertion, desc) {
       )
     }
 
-    if (undefined !== arg2) {
+    if (Object.keys(args).indexOf('arg2') !== -1) {
       this.assert(
         arg2 === actual,
         () => 'expected ' + sig + ' to have a ' + inspect(arg1) + ' ' + desc + ' with the value #{exp}, but the value was #{act}' + markup(),
