@@ -51,6 +51,10 @@ describe('#state', () => {
       expect(() => {
         expect(wrapper).to.not.have.state('foo', 'bar')
       }).to.throw("not to have a 'foo' state with the value 'bar'")
+
+      expect(() => {
+        expect(wrapper).to.have.state('foo', undefined)
+      }).to.throw("to have a 'foo' state with the value undefined")
     }, { render: false })
   })
 
