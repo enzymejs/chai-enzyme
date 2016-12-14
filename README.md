@@ -783,6 +783,7 @@ const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
 expect(wrapper).to.have.style('border')
 expect(wrapper).to.not.have.style('color')
+expect(wrapper).to.have.style('margin-top') // do not use camelCase keys as you would do in your React component
 
 expect(wrapper).to.have.style('border', '1px')
 expect(wrapper).to.not.have.style('border', '2px')
