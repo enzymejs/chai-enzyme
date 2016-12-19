@@ -58,7 +58,7 @@
     "babel-register": "^6.5.2",
     "chai": "^3.5.0",
     "enzyme": "^2.0.0",
-    "jsdom": "^9.1.0",
+    "jsdom": "^9.9.0",
     "mocha": "^3.0.0",
     "react": "^0.14.0 || ^15.0.0-0",
     "react-addons-test-utils": "^0.14.0 || ^15.0.0-0",
