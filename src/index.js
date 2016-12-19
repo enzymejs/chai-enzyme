@@ -21,7 +21,7 @@ import value from './assertions/value'
 import exactly from './chains/exactly'
 import ChaiWrapper from './ChaiWrapper'
 
-module.exports = function (debug = printDebug) {
+export default function (debug = printDebug) {
   return function (chai, utils) {
     const chaiWrapper = new ChaiWrapper(chai, utils, debug)
 
