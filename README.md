@@ -13,7 +13,7 @@
     1. [`checked()`](#checked)
     1. [`className(str)`](#classnamestr)
     1. [`contain(node)`](#containnode)
-    1. [`containMatching(node)`](#containmatchingnode)
+    1. [`containMatchingElement(node)`](#containmatchingelementnode)
     1. [`descendants(selector)`](#descendantsselector)
       1. [`exactly()`](#exactly)
     1. [`disabled()`](#disabled)
