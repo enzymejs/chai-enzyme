@@ -21,13 +21,14 @@
     "build": "babel src --out-dir build",
     "clean": "rimraf build",
     "test:lint": "standard --verbose | snazzy",
-    "test:unit": "NODE_ENV=test mocha test/**/*.test.js",
+    "test:unit": "cross-env NODE_ENV=test mocha test/**/*.test.js",
+    "test:watch": "npm run test:unit -- --watch",
     "test": "npm run test:lint && npm run test:unit"
   },
   "peerDependencies": {
     "chai": "3.x",
     "cheerio": "0.19.x || 0.20.x || 0.22.x",
-    "enzyme": "1.x || 2.x",
+    "enzyme": "1.x || ^2.3.0",
     "react": "^0.14.0 || ^15.0.0-0",
     "react-addons-test-utils": "^0.14.0 || ^15.0.0-0",
     "react-dom": "^0.14.0 || ^15.0.0-0"
@@ -57,7 +58,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.5.2",
     "chai": "^3.5.0",
-    "enzyme": "^2.0.0",
+    "cross-env": "3.1.4",
+    "enzyme": "^2.3.0",
     "jsdom": "^9.1.0",
     "mocha": "^3.0.0",
     "react": "^0.14.0 || ^15.0.0-0",
