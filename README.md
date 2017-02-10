@@ -13,6 +13,7 @@
     1. [`checked()`](#checked)
     1. [`className(str)`](#classnamestr)
     1. [`contain(node)`](#containnode)
+    1. [`containMatching(node)`](#containmatchingnode)
     1. [`descendants(selector)`](#descendantsselector)
       1. [`exactly()`](#exactly)
     1. [`disabled()`](#disabled)
@@ -214,6 +215,51 @@ const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
 expect(wrapper).to.contain(<User index={1} />)
 expect(wrapper).to.not.contain(<User index={3} />)
+```
+
+#### `containMatchingElement(node)`
+
+| render | mount | shallow |
+| -------|-------|-------- |
+| no     | yes   | yes     |
+
+
+Assert that the wrapper contains a matching given node:
+
+```js
+import React from 'react'
+import {mount, render, shallow} from 'enzyme'
+
+class User extends React.Component {
+  render () {
+    return (
+      <span>User {this.props.index} {this.props.name}</span>
+    )
+  }
+}
+
+User.propTypes = {
+  index: React.PropTypes.number,
+  name: React.PropTypes.string.isRequired
+}
+
+class Fixture extends React.Component {
+  render () {
+    return (
+      <div>
+        <ul>
+          <li><User index={1} name='John' /></li>
+          <li><User index={2} name='Doe' /></li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
+
+expect(wrapper).to.containMatchingElement(<User name='John' />)
+expect(wrapper).to.not.containMatchingElement(<User name='Conor' />)
 ```
 
 #### `descendants(selector)`

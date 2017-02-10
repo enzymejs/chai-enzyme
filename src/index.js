@@ -3,7 +3,7 @@ import printDebug from './debug'
 import checked from './assertions/checked'
 import className from './assertions/className'
 import contain from './assertions/contain'
-import containsMatchingElement from './assertions/containsMatchingElement'
+import containMatchingElement from './assertions/containMatchingElement'
 import descendants from './assertions/descendants'
 import disabled from './assertions/disabled'
 import empty from './assertions/empty'
@@ -54,7 +54,7 @@ module.exports = function (debug = printDebug) {
     chaiWrapper.addAssertion(exist, 'present')
 
     chaiWrapper.overwriteChainableMethod(contain, 'contain')
-    chaiWrapper.addAssertion(containsMatchingElement, 'containsMatchingElement')
+    chaiWrapper.addAssertion(containMatchingElement, 'containMatchingElement')
 
     chaiWrapper.addChainableMethod(exactly, 'exactly')
   }

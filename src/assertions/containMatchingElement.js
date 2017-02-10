@@ -1,6 +1,6 @@
 import reactElementToJSXString from 'react-element-to-jsx-string'
 
-export default function containsMatchingElement ({ wrapper, markup, arg1, sig }) {
+export default function containMatchingElement ({ wrapper, markup, arg1, sig }) {
   const arg1JSXString = reactElementToJSXString(arg1)
 
   this.assert(

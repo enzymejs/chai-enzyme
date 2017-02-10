@@ -26,30 +26,30 @@ class Fixture extends React.Component {
 
 const it = createTest(<Fixture />)
 
-describe('#containsMatchingElement', () => {
+describe('#containMatchingElement', () => {
   describe('(node)', () => {
     it('passes when the actual matches the expected', (wrapper) => {
-      expect(wrapper).to.containsMatchingElement(<User name='John' />)
-      expect(wrapper).to.containsMatchingElement(<User name='Doe' />)
+      expect(wrapper).to.containMatchingElement(<User name='John' />)
+      expect(wrapper).to.containMatchingElement(<User name='Doe' />)
     }, { render: false })
 
     it('passes negated when the actual does not match the expected', (wrapper) => {
-      expect(wrapper).to.not.containsMatchingElement(<User name='Conor' />)
+      expect(wrapper).to.not.containMatchingElement(<User name='Conor' />)
     }, { render: false })
 
     it('fails when the actual does not match the expected', (wrapper) => {
       expect(() => {
-        expect(wrapper).to.containsMatchingElement(<User name='Conor' />)
+        expect(wrapper).to.containMatchingElement(<User name='Conor' />)
       }).to.throw('to contain matching <User name="Conor" />')
 
       expect(() => {
-        expect(wrapper).to.not.containsMatchingElement(<User name='Doe' />)
+        expect(wrapper).to.not.containMatchingElement(<User name='Doe' />)
       }).to.throw('not to contain matching <User name="Doe" />')
     }, { render: false })
 
     it('fails when the actual is undefined', () => {
       expect(() => {
-        expect(undefined).to.containsMatchingElement(<User name='John' />)
+        expect(undefined).to.containMatchingElement(<User name='John' />)
       }).to.throw()
     })
   })
