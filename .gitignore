@@ -2,3 +2,4 @@
 /build/
 *.local.js
 npm-debug.log*
+.vscode
