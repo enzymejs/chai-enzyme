@@ -1,4 +1,4 @@
-0.6.2 / February 10 2017
+Unreleased
 =======================
 
 * [feature] add containMatchingElement support
