@@ -1,3 +1,9 @@
+Unreleased
+=======================
+
+* **[breaking]** upgrade Enzyme dependency to 2.3.x or above
+* [feature] add containMatchingElement support
+
 0.6.1 / November 18 2016
 =======================
 
