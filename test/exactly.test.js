@@ -20,7 +20,7 @@ class Fixture extends React.Component {
 
 const it = createTest(<Fixture />)
 
-describe.only('#exactly', () => {
+describe('#exactly', () => {
   describe('descendants', () => {
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper).to.have.descendants('#root')
