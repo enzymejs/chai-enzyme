@@ -29,6 +29,10 @@ describe('#exactly', () => {
       expect(wrapper).to.have.exactly(8).descendants('.multiple')
     })
 
+    it('passes when the the expected is 0 and there are none', (wrapper) => {
+      expect(wrapper).to.have.exactly(0).descendants('#root1')
+    })
+
     it('passes negated when the actual does not match the expected', (wrapper) => {
       expect(wrapper).to.not.have.exactly(3).descendants('#root1')
       expect(wrapper.find('#child')).to.not.have.exactly(5).descendants('#last1')
@@ -46,6 +50,12 @@ describe('#exactly', () => {
       expect(() => {
         expect(wrapper).to.not.have.exactly(8).descendants('.multiple')
       }).to.throw("not to have 8 descendants '.multiple'")
+    })
+
+    it('fails when the the expected is 0 and there are some', (wrapper) => {
+      expect(() => {
+        expect(wrapper).to.have.exactly(0).descendants('#root')
+      }).to.throw("to have 0 descendants '#root'")
     })
   })
 })
