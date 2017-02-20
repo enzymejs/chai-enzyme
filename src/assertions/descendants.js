@@ -1,7 +1,7 @@
 export default function descendants ({ wrapper, markup, arg1, sig, flag }) {
   const exactlyCount = flag(this, 'exactlyCount')
 
-  if (exactlyCount) {
+  if (exactlyCount !== undefined) {
     const descendantCount = wrapper.getDescendantsCount(arg1)
 
     this.assert(

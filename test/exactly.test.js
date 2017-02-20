@@ -20,13 +20,17 @@ class Fixture extends React.Component {
 
 const it = createTest(<Fixture />)
 
-describe('#exactly', () => {
+describe.only('#exactly', () => {
   describe('descendants', () => {
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper).to.have.descendants('#root')
       expect(wrapper.find('#child')).to.have.descendants('#last')
       expect(wrapper).to.not.have.exactly(2).descendants('.multiple')
       expect(wrapper).to.have.exactly(8).descendants('.multiple')
+    })
+
+    it('passes when the the expected is 0 and there are none', (wrapper) => {
+      expect(wrapper).to.have.exactly(0).descendants('#root1')
     })
 
     it('passes negated when the actual does not match the expected', (wrapper) => {
@@ -46,6 +50,12 @@ describe('#exactly', () => {
       expect(() => {
         expect(wrapper).to.not.have.exactly(8).descendants('.multiple')
       }).to.throw("not to have 8 descendants '.multiple'")
+    })
+
+    it('fails when the the expected is 0 and there are some', (wrapper) => {
+      expect(() => {
+        expect(wrapper).to.have.exactly(0).descendants('#root')
+      }).to.throw("to have 0 descendants '#root'")
     })
   })
 })
