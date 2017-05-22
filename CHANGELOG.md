@@ -1,8 +1,10 @@
-Unreleased
+0.7.0 / May 22 2017
 =======================
 
-* **[breaking]** upgrade Enzyme dependency to 2.3.x or above
+* **[breaking]** Upgrade Enzyme dependency to 2.3.x or above
 * [feature] add containMatchingElement support
+* [fix] Handle `.exactly(0)`
+* [fix] Add support for undefined argument values
 
 0.6.1 / November 18 2016
 =======================
