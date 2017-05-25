@@ -104,15 +104,26 @@ export default class ChaiWrapper {
         return _super.apply(this, arguments)
       }
 
-      assertion.call(this, {
+      const config = {
         markup: () => debug(wrapper),
         sig: inspect(wrapper),
         wrapper,
         arg1,
-        arg2,
         flag,
         inspect
-      })
+      }
+
+      /**
+       * Checking the length of the arguments array to make
+       * sure that we have a defined argument assigned to arg2.
+       * By default, 'undefined' is assigned to arg2 if no specific arguments exist...
+       *
+       */
+      if (arguments.length > 1) {
+        config.arg2 = arg2
+      }
+
+      assertion.call(this, config)
     }
   }
 
