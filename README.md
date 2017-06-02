@@ -429,7 +429,7 @@ class Fixture extends React.Component {
 
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
-expect(wrapper.find('#parent')).be.present()
+expect(wrapper.find('#parent')).to.be.present()
 expect(wrapper.find('#parent')).to.exist // an alias
 
 class NullFixture extends React.Component {
