@@ -5,5 +5,10 @@ node_js:
   - "4.2"
   - "4.1"
   - "4.0"
+env:
+  - CHAI_VERSION=^3.0.0
+  - CHAI_VERSION=^4.0.0
+before_script:
+  - npm install chai@$CHAI_VERSION
 script:
   - npm test
