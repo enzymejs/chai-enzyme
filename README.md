@@ -44,8 +44,8 @@
 
 ```js
 "peerDependencies": {
-  "chai": "3.x",
-  "cheerio": "0.19.x || 0.20.x || 0.22.x",
+  "chai": "^3.0.0 || ^4.0.0",
+  "cheerio": "0.19.x || 0.20.x || 0.22.x || 1.0.0-rc.1",
   "enzyme": "1.x || ^2.3.0"
 }
 ```
@@ -429,7 +429,7 @@ class Fixture extends React.Component {
 
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
-expect(wrapper.find('#parent')).be.present()
+expect(wrapper.find('#parent')).to.be.present()
 expect(wrapper.find('#parent')).to.exist // an alias
 
 class NullFixture extends React.Component {
