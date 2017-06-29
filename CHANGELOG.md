@@ -1,3 +1,9 @@
+0.8.0 / June 29 2017
+===================
+
+* [feature] Add support for chai ^4.0.0
+* [fix] Protect against duplicate plugin use
+
 0.7.1 / May 24 2017
 ===================
 
