@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 class User extends React.Component {
   render () {
     return (
@@ -7,8 +9,8 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  index: React.PropTypes.number,
-  name: React.PropTypes.string.isRequired
+  index: PropTypes.number,
+  name: PropTypes.string.isRequired
 }
 
 class Fixture extends React.Component {

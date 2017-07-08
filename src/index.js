@@ -22,8 +22,14 @@ import value from './assertions/value'
 import exactly from './chains/exactly'
 import ChaiWrapper from './ChaiWrapper'
 
+const plugins = new Map()
+
 module.exports = function (debug = printDebug) {
-  return function (chai, utils) {
+  let plugin = plugins.get(debug)
+
+  if (plugin) { return plugin }
+
+  plugin = function (chai, utils) {
     const chaiWrapper = new ChaiWrapper(chai, utils, debug)
 
     chaiWrapper.addAssertion(generic('attr', 'attribute'), 'attr')
@@ -58,4 +64,8 @@ module.exports = function (debug = printDebug) {
 
     chaiWrapper.addChainableMethod(exactly, 'exactly')
   }
+
+  plugins.set(debug, plugin)
+
+  return plugin
 }

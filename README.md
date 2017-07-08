@@ -44,9 +44,9 @@
 
 ```js
 "peerDependencies": {
-  "chai": "3.x",
-  "cheerio": "0.19.x || 0.20.x || 0.22.x",
-  "enzyme": "1.x || 2.x"
+  "chai": "^3.0.0 || ^4.0.0",
+  "cheerio": "0.19.x || 0.20.x || 0.22.x || 1.0.0-rc.1",
+  "enzyme": "1.x || ^2.3.0"
 }
 ```
 
@@ -185,6 +185,7 @@ Assert that the wrapper contains a given node:
 ```js
 import React from 'react'
 import {mount, render, shallow} from 'enzyme'
+import PropTypes from 'prop-types';
 
 class User extends React.Component {
   render () {
@@ -195,7 +196,7 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  index: React.PropTypes.number.isRequired
+  index: PropTypes.number.isRequired
 }
 
 class Fixture extends React.Component {
@@ -229,6 +230,7 @@ Assert that the wrapper contains a matching given node:
 ```js
 import React from 'react'
 import {mount, render, shallow} from 'enzyme'
+import PropTypes from 'prop-types';
 
 class User extends React.Component {
   render () {
@@ -239,8 +241,8 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  index: React.PropTypes.number,
-  name: React.PropTypes.string.isRequired
+  index: PropTypes.number,
+  name: PropTypes.string.isRequired
 }
 
 class Fixture extends React.Component {
@@ -429,7 +431,7 @@ class Fixture extends React.Component {
 
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
-expect(wrapper.find('#parent')).be.present()
+expect(wrapper.find('#parent')).to.be.present()
 expect(wrapper.find('#parent')).to.exist // an alias
 
 class NullFixture extends React.Component {
@@ -888,6 +890,7 @@ Assert that the wrapper has given prop [with value]:
 ```js
 import React from 'react'
 import {mount, render, shallow} from 'enzyme'
+import PropTypes from 'prop-types';
 
 class User extends React.Component {
   render () {
@@ -898,7 +901,7 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  index: React.PropTypes.number.isRequired
+  index: PropTypes.number.isRequired
 }
 
 class Fixture extends React.Component {
@@ -938,6 +941,7 @@ Assert that the wrapper has given set of props [with values]:
 ```js
 import React from 'react'
 import {mount, render, shallow} from 'enzyme'
+import PropTypes from 'prop-types';
 
 class User extends React.Component {
   render () {
@@ -948,7 +952,7 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  index: React.PropTypes.number.isRequired
+  index: PropTypes.number.isRequired
 }
 
 class Fixture extends React.Component {

@@ -1,16 +1,29 @@
-Unreleased
-=======================
+0.8.0 / June 29 2017
+===================
 
-* **[breaking]** upgrade Enzyme dependency to 2.3.x or above
+* [feature] Add support for chai ^4.0.0
+* [fix] Protect against duplicate plugin use
+
+0.7.1 / May 24 2017
+===================
+
+* [fix] Don't repeat enzyme's peer dependencies
+
+0.7.0 / May 22 2017
+===================
+
+* **[breaking]** Upgrade Enzyme dependency to 2.3.x or above
 * [feature] add containMatchingElement support
+* [fix] Handle `.exactly(0)`
+* [fix] Add support for undefined argument values
 
 0.6.1 / November 18 2016
-=======================
+========================
 
 * [fix] React 15.4.x support
 
 0.6.0 / November 5 2016
-======================
+=======================
 
 * [fix] Fix cross-browser issue when using text assertions
 * [fix] Delegate to Enzyme wrapper `.is` for match assertions
