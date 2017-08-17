@@ -1,7 +1,7 @@
-import reactElementToJSXString from 'react-element-to-jsx-string'
+import reactNodeToString from '../reactNodeToString'
 
 export default function contain ({ wrapper, markup, arg1, sig }) {
-  const arg1JSXString = reactElementToJSXString(arg1)
+  const arg1JSXString = reactNodeToString(arg1)
 
   this.assert(
     wrapper.hasNode(arg1),
