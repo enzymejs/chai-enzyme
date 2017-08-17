@@ -12,7 +12,7 @@
   1. [Assertions](#assertions)
     1. [`checked()`](#checked)
     1. [`className(str)`](#classnamestr)
-    1. [`contain(node)`](#containnode)
+    1. [`contain(nodeOrNodes)`](#containnodeornodes)
     1. [`containMatchingElement(node)`](#containmatchingelementnode)
     1. [`descendants(selector)`](#descendantsselector)
       1. [`exactly()`](#exactly)
@@ -173,14 +173,14 @@ expect(wrapper.find('span')).to.have.className('child')
 expect(wrapper.find('span')).to.not.have.className('root')
 ```
 
-#### `contain(node)`
+#### `contain(nodeOrNodes)`
 
 | render | mount | shallow |
 | -------|-------|-------- |
 | no     | yes   | yes     |
 
 
-Assert that the wrapper contains a given node:
+Assert that the wrapper contains a given node or array of nodes:
 
 ```js
 import React from 'react'
@@ -205,7 +205,10 @@ class Fixture extends React.Component {
       <div>
         <ul>
           <li><User index={1} /></li>
-          <li><User index={2} /></li>
+          <li>
+            <User index={2} />
+            <User index={3} />
+          </li>
         </ul>
       </div>
     )
@@ -215,6 +218,7 @@ class Fixture extends React.Component {
 const wrapper = mount(<Fixture />) // mount/render/shallow when applicable
 
 expect(wrapper).to.contain(<User index={1} />)
+expect(wrapper).to.contain([<User index={2} />, <User index={3} />])
 expect(wrapper).to.not.contain(<User index={3} />)
 ```
 
