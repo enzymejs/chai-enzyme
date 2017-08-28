@@ -21,16 +21,16 @@
     "build": "babel src --out-dir build",
     "clean": "rimraf build",
     "test:lint": "standard --verbose | snazzy",
-    "test:unit": "cross-env NODE_ENV=test mocha test/**/*.test.js",
+    "test:unit": "cross-env NODE_ENV=test mocha --require test/enzyme-preamble.js test/**/*.test.js",
     "test:watch": "npm run test:unit -- --watch",
     "test": "npm run test:lint && npm run test:unit"
   },
   "peerDependencies": {
     "chai": "^3.0.0 || ^4.0.0",
     "cheerio": "0.19.x || 0.20.x || 0.22.x || 1.0.0-rc.1",
-    "enzyme": "1.x || ^2.3.0",
-    "react": "^0.14.0 || ^15.0.0-0",
-    "react-dom": "^0.14.0 || ^15.0.0-0"
+    "enzyme": "^3.0.0 || ^3.0.0-rc || ^3.0.0-beta || ^3.0.0-alpha",
+    "react": "^16.0.0 || ^16.0.0-rc || ^16.0.0-beta || ^16.0.0-alpha",
+    "react-dom": "^16.0.0 || ^16.0.0-rc || ^16.0.0-beta || ^16.0.0-alpha"
   },
   "keywords": [
     "javascript",
@@ -58,13 +58,14 @@
     "babel-register": "^6.5.2",
     "chai": "^3.0.0 || ^4.0.0",
     "cross-env": "3.1.4",
-    "enzyme": "^2.3.0",
+    "enzyme": "^3.0.0-alpha.1",
     "jsdom": "^9.1.0",
     "mocha": "^3.0.0",
     "prop-types": "^15.5.7",
-    "react": "^0.14.0 || ^15.0.0-0",
-    "react-addons-test-utils": "^0.14.0 || ^15.0.0-0",
-    "react-dom": "^0.14.0 || ^15.0.0-0",
+    "react": "^16.0.0-beta.3",
+    "react-addons-test-utils": "^16.0.0-alpha.3",
+    "react-dom": "^16.0.0-beta.3",
+    "react-test-renderer": "^16.0.0-beta.3",
     "rimraf": "^2.5.0",
     "snazzy": "^5.0.0",
     "standard": "^8.1.0"
@@ -84,7 +85,8 @@
     ]
   },
   "dependencies": {
+    "create-react-class": "^15.6.0",
     "html": "^1.0.0",
-    "react-element-to-jsx-string": "^5.0.0"
+    "react-element-to-jsx-string": "^12.0.0"
   }
 }
