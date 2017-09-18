@@ -1,6 +1,12 @@
-import {findDOMNode} from 'enzyme/build/react-compat'
-
 import TestWrapper from './TestWrapper'
+
+function getRoot (wrapper) {
+  // doing this to maintain backwards compatibility with enzyme 2.x
+  if (typeof wrapper.root === 'function') {
+    return wrapper.root()
+  }
+  return wrapper.root
+}
 
 export default class ReactTestWrapper extends TestWrapper {
   constructor (wrapper) {
@@ -10,18 +16,16 @@ export default class ReactTestWrapper extends TestWrapper {
 
   get el () {
     if (!this.__el) {
-      this.__el = this.wrapper.single((n) => findDOMNode(n))
+      this.__el = this.wrapper.getDOMNode()
     }
 
     return this.__el
   }
 
   inspect () {
-    const name = this.wrapper.root.node.constructor.displayName ||
-      this.wrapper.root.node.constructor.name ||
-      '???'
+    const name = getRoot(this.wrapper).name() || '???'
 
-    if (this.wrapper.root === this.wrapper) {
+    if (getRoot(this.wrapper) === this.wrapper) {
       return `<${name} />`
     }
 

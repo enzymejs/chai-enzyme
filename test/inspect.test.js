@@ -1,3 +1,4 @@
+import createReactClass from 'create-react-class'
 import {shallow, render, mount} from 'enzyme'
 import wrap from '../src/wrap'
 
@@ -9,7 +10,7 @@ class ClassSyntax extends React.Component {
   }
 }
 
-const DisplayNameSyntax = React.createClass({
+const DisplayNameSyntax = createReactClass({
   displayName: 'DisplayNameSyntax',
 
   render () {
