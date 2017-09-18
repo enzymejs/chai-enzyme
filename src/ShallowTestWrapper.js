@@ -2,6 +2,22 @@ import $ from 'cheerio'
 
 import TestWrapper from './TestWrapper'
 
+function getRoot (wrapper) {
+  // doing this to maintain backwards compatibility with enzyme 2.x
+  if (typeof wrapper.root === 'function') {
+    return wrapper.root()
+  }
+  return wrapper.root
+}
+
+function getRootName (wrapper) {
+  const root = getRoot(wrapper)
+  const instance = root.instance()
+  const fn = instance && instance.constructor
+  const name = fn ? fn.displayName || fn.name : root.name();
+  return name || '???'
+}
+
 export default class ShallowTestWrapper extends TestWrapper {
   constructor (wrapper) {
     super()
@@ -17,11 +33,9 @@ export default class ShallowTestWrapper extends TestWrapper {
   }
 
   inspect () {
-    const name = this.wrapper.root.unrendered.type.displayName ||
-      this.wrapper.root.unrendered.type.name ||
-      '???'
+    const name = getRootName(this.wrapper)
 
-    if (this.wrapper.root === this.wrapper) {
+    if (getRoot(this.wrapper) === this.wrapper) {
       return `<${name} />`
     }
 
