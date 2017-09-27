@@ -8,10 +8,9 @@ export default class CheerioTestWrapper extends TestWrapper {
 
   get el () {
     if (!this.__el) {
-      if (this.wrapper.first()['0'].type === 'root') {
+      this.__el = this.wrapper.first()
+      if (this.__el.length > 0 && this.__el['0'].type === 'root') {
         this.__el = this.wrapper.children().first()
-      } else {
-        this.__el = this.wrapper.first()
       }
     }
 

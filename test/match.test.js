@@ -7,9 +7,11 @@ class MyComponent extends React.Component {
 class Fixture extends React.Component {
   render () {
     return (
-      <div id='root'>
-        <span id='child'>test</span>
-        <MyComponent id='my-component' />
+      <div>
+        <div id='root'>
+          <span id='child'>test</span>
+          <MyComponent id='my-component' />
+        </div>
       </div>
     )
   }

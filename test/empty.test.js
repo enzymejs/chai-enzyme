@@ -1,8 +1,10 @@
 class Fixture extends React.Component {
   render () {
     return (
-      <div id='parent'>
-        <div id='child' />
+      <div>
+        <div id='parent'>
+          <div id='child' />
+        </div>
       </div>
     )
   }

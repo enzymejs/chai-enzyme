@@ -11,8 +11,12 @@ class Fixture extends React.Component {
       <div id='root'>
         <span id='child'>test</span>
         <video itemScope allowFullScreen={true} autoPlay={''} hidden={false} controls={null} loop={undefined}>test2</video>
-        <audio role name={''} accessKey={false} spellCheck={null} rel={magicToStringObject}>test3</audio>
-        <tr rowSpan={0} rows={0} cols={'4'} size={'0'} />
+        <audio disabled name={''} contentEditable={false} spellCheck={null} rel={magicToStringObject}>test3</audio>
+        <table>
+          <tbody>
+            <tr rowSpan={0} rows={0} cols={'4'} size={'0'} />
+          </tbody>
+        </table>
       </div>
     )
     /* eslint-enable react/jsx-boolean-value */
@@ -86,7 +90,7 @@ describe('#attr', () => {
 
     describe('regular attrs', () => {
       it('passes when attribute exists without a value', (wrapper) => {
-        expect(wrapper.find('audio')).to.have.attr('role')
+        expect(wrapper.find('audio')).to.have.attr('disabled')
       })
 
       it('passes when attribute exists with a falsey (but not false/null/undefined) value', (wrapper) => {
@@ -94,7 +98,7 @@ describe('#attr', () => {
       })
 
       it('passes when attribute exists but has value `false`', (wrapper) => {
-        expect(wrapper.find('audio')).to.have.attr('accesskey')
+        expect(wrapper.find('audio')).to.have.attr('contenteditable')
       })
 
       it('passes negated when attribute exists but has value `null`', (wrapper) => {
@@ -148,7 +152,7 @@ describe('#attr', () => {
 
     describe('regular attrs', () => {
       it('converts values to strings', (wrapper) => {
-        expect(wrapper.find('audio')).to.have.attr('accesskey', 'false')
+        expect(wrapper.find('audio')).to.have.attr('contenteditable', 'false')
         expect(wrapper.find('audio')).to.have.attr('rel', 'magic')
       })
     })

@@ -2,6 +2,8 @@ import $ from 'cheerio'
 
 import TestWrapper from './TestWrapper'
 
+const getDisplayName = type => type.displayName || type.name || type;
+
 export default class ShallowTestWrapper extends TestWrapper {
   constructor (wrapper) {
     super()
@@ -17,11 +19,13 @@ export default class ShallowTestWrapper extends TestWrapper {
   }
 
   inspect () {
-    const name = this.wrapper.root.unrendered.type.displayName ||
-      this.wrapper.root.unrendered.type.name ||
-      '???'
+    const root = this.wrapper.root()
 
-    if (this.wrapper.root === this.wrapper) {
+    const rootInstance = root.instance()
+    const rootType = rootInstance ? rootInstance.constructor : root.getElement().type
+    const name = rootType ? getDisplayName(rootType) : '???'
+
+    if (root === this.wrapper) {
       return `<${name} />`
     }
 

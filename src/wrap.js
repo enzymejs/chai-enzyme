@@ -13,7 +13,7 @@ export default function wrap (el) {
     return new ReactTestWrapper(el)
   }
 
-  if (el && el._root && el.options) {
+  if (el && el.cheerio && el.options) {
     return new CheerioTestWrapper(el)
   }
 }
