@@ -2,7 +2,7 @@ import $ from 'cheerio'
 
 import TestWrapper from './TestWrapper'
 
-const getDisplayName = type => type.displayName || type.name || type;
+const getDisplayName = type => type.displayName || type.name || type
 
 export default class ShallowTestWrapper extends TestWrapper {
   constructor (wrapper) {

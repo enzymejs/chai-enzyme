@@ -17,7 +17,7 @@ const DisplayNameSyntax = class extends React.Component {
   }
 }
 
-DisplayNameSyntax.displayName = 'DisplayNameSyntax';
+DisplayNameSyntax.displayName = 'DisplayNameSyntax'
 
 function inspect (wrapper) {
   return wrap(wrapper).inspect()
