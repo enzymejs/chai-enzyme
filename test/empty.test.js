@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+
 class Fixture extends React.Component {
   render () {
     return (
