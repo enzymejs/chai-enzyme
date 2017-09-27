@@ -85,7 +85,6 @@
     ]
   },
   "dependencies": {
-    "html": "^1.0.0",
-    "react-element-to-jsx-string": "^5.0.0"
+    "html": "^1.0.0"
   }
 }
