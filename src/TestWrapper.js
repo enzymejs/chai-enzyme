@@ -38,4 +38,8 @@ export default class TestWrapper {
   text () {
     return this.wrapper.text()
   }
+
+  root () {
+    return (typeof this.wrapper.root === 'function') ? this.wrapper.root() : this.wrapper.root
+  }
 }

@@ -15,7 +15,7 @@ export default class ReactTestWrapper extends TestWrapper {
   }
 
   inspect () {
-    const root = this.wrapper.root()
+    const root = this.root()
     const name = root.name() || '???'
 
     if (root === this.wrapper) {

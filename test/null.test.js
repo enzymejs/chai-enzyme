@@ -27,7 +27,11 @@ describe('#present', () => {
     }, { render: false })
 
     it('passes when the actual matches the expected', (wrapper) => {
-      expect(wrapper).not.to.be.present()
+      let expectation = expect(wrapper)
+      if (isEnzyme3) {
+        expectation = expectation.not
+      }
+      expectation.to.be.present()
     }, { shallow: false, mount: false })
 
     it('fails when the actual does not match the expected', (wrapper) => {
@@ -37,9 +41,13 @@ describe('#present', () => {
     }, { render: false })
 
     it('fails when the actual does not match the expected', (wrapper) => {
-      expect(() => {
+      let expectation = expect(() => {
         expect(wrapper).to.be.present()
-      }).to.throw('to exist')
+      })
+      if (!isEnzyme3) {
+        expectation = expectation.not
+      }
+      expectation.to.throw('to exist')
     }, { shallow: false, mount: false })
   })
 })
