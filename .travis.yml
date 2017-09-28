@@ -12,5 +12,6 @@ env:
   - ENZYME_VERSION=^3
 before_script:
   - npm install chai@$CHAI_VERSION
+  - npm install enzyme@$ENZYME_VERSION
 script:
   - npm test
