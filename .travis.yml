@@ -12,7 +12,7 @@ env:
   - ENZYME_VERSION=^3
 before_script:
   - npm install chai@$CHAI_VERSION
-  - if [ "$ENZYME_VERSION" = "^2" ]; then npm uninstall enzyme-adapter-react-15; fi
+  - if [ "$ENZYME_VERSION" = "^2" ]; then npm uninstall enzyme-adapter-react-15; npm install cheerio@0.22; fi
   - npm install enzyme@$ENZYME_VERSION
 script:
   - npm test
