@@ -1,17 +1,19 @@
 class Fixture extends React.Component {
   render () {
     return (
-      <div id='root'>
-        <div id='child'>
-          <div className='multiple' />
-          <div className='multiple' />
-          <div className='multiple' />
-          <div className='multiple' />
-          <div className='multiple' />
-          <div className='multiple' />
-          <div className='multiple' />
-          <div className='multiple' />
-          <span id='last' />
+      <div>
+        <div id='root'>
+          <div id='child'>
+            <div className='multiple' />
+            <div className='multiple' />
+            <div className='multiple' />
+            <div className='multiple' />
+            <div className='multiple' />
+            <div className='multiple' />
+            <div className='multiple' />
+            <div className='multiple' />
+            <span id='last' />
+          </div>
         </div>
       </div>
     )

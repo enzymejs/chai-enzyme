@@ -1,7 +1,11 @@
+/* eslint-disable no-unused-expressions */
+
 class Fixture extends React.Component {
   render () {
     return (
-      <div id='parent' />
+      <div>
+        <div id='parent' />
+      </div>
     )
   }
 }

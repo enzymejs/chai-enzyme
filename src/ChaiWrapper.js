@@ -1,7 +1,6 @@
 import wrap from './wrap'
 
 export default class ChaiWrapper {
-
   /**
    * Constructs a instance of the chai wrapper.
    *

@@ -1,4 +1,9 @@
-import reactElementToJSXString from 'react-element-to-jsx-string'
+import { shallow } from 'enzyme'
+
+function reactElementToJSXString (node) {
+  const Wrapper = () => node
+  return shallow(<Wrapper />).debug()
+}
 
 function reactArrayToJSXString (nodes) {
   let jsxString = '['

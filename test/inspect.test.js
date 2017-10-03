@@ -9,15 +9,15 @@ class ClassSyntax extends React.Component {
   }
 }
 
-const DisplayNameSyntax = React.createClass({
-  displayName: 'DisplayNameSyntax',
-
+const DisplayNameSyntax = class extends React.Component {
   render () {
     return (
       <div>Hello world</div>
     )
   }
-})
+}
+
+DisplayNameSyntax.displayName = 'DisplayNameSyntax'
 
 function inspect (wrapper) {
   return wrap(wrapper).inspect()
@@ -29,6 +29,8 @@ describe('#inspect', () => {
       expect(String(inspect(shallow(<ClassSyntax />)))).to.equal('<ClassSyntax />')
       expect(String(inspect(shallow(<DisplayNameSyntax />)))).to.equal('<DisplayNameSyntax />')
       expect(String(inspect(shallow(<DisplayNameSyntax />).find('div')))).to.equal('the node in <DisplayNameSyntax />')
+      expect(String(inspect(shallow(<DisplayNameSyntax />).find('span')))).to.equal('the node in <DisplayNameSyntax />')
+      expect(String(inspect(shallow(<div />)))).to.equal('<div />')
     })
   })
 
@@ -37,6 +39,7 @@ describe('#inspect', () => {
       expect(String(inspect(mount(<ClassSyntax />)))).to.equal('<ClassSyntax />')
       expect(String(inspect(mount(<DisplayNameSyntax />)))).to.equal('<DisplayNameSyntax />')
       expect(String(inspect(mount(<DisplayNameSyntax />).find('div')))).to.equal('the node in <DisplayNameSyntax />')
+      expect(String(inspect(mount(<DisplayNameSyntax />).find('span')))).to.equal('the node in <DisplayNameSyntax />')
     })
   })
 

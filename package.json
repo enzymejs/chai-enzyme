@@ -27,10 +27,10 @@
   },
   "peerDependencies": {
     "chai": "^3.0.0 || ^4.0.0",
-    "cheerio": "0.19.x || 0.20.x || 0.22.x || 1.0.0-rc.1",
-    "enzyme": "1.x || ^2.3.0",
-    "react": "^0.14.0 || ^15.0.0-0",
-    "react-dom": "^0.14.0 || ^15.0.0-0"
+    "cheerio": "0.19.x || 0.20.x || 0.22.x || ^1.0.0-0",
+    "enzyme": "^2.7.0 || ^3.0.0",
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0",
+    "react-dom": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0"
   },
   "keywords": [
     "javascript",
@@ -57,14 +57,15 @@
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.5.2",
     "chai": "^3.0.0 || ^4.0.0",
-    "cross-env": "3.1.4",
-    "enzyme": "^2.3.0",
+    "cross-env": "^3.1.4",
+    "enzyme": "^2.7.0 || ^3.0.0",
+    "enzyme-adapter-react-15": "^1.0.0",
     "jsdom": "^9.1.0",
     "mocha": "^3.0.0",
     "prop-types": "^15.5.7",
-    "react": "^0.14.0 || ^15.0.0-0",
-    "react-addons-test-utils": "^0.14.0 || ^15.0.0-0",
-    "react-dom": "^0.14.0 || ^15.0.0-0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-test-renderer": "^15.6.2",
     "rimraf": "^2.5.0",
     "snazzy": "^5.0.0",
     "standard": "^8.1.0"
@@ -80,11 +81,11 @@
       "afterEach",
       "React",
       "expect",
-      "createTest"
+      "createTest",
+      "isEnzyme3"
     ]
   },
   "dependencies": {
-    "html": "^1.0.0",
-    "react-element-to-jsx-string": "^5.0.0"
+    "html": "^1.0.0"
   }
 }
