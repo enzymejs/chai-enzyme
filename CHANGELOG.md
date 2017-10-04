@@ -1,3 +1,30 @@
+1.0.0 / Unreleased
+==================
+
+* [feature] Add support for enzyme ^3.0.0 (which implies React 16 support)
+* [feature] Support an array of nodes in `contain`
+* [breaking] If you are using cheerio 1.0, there's' a possibility you will have
+to wrap your React components with a div wrapper.
+
+```jsx
+<div id='parent'>
+  <div id='child' />
+<div>
+```
+
+```js
+// Enzyme 2
+wrapper.find('#parent').length //=> 1
+wrapper.is('#parent') //=> false
+
+// Enzyme 3
+wrapper.find('#parent').length //=> 0
+wrapper.is('#parent') //=> true
+```
+
+The new version returns a cheerio wrapper with a type of tag that IS the parent element.
+Before it returned a wrapper with a type root that contains the parent element.
+
 0.8.0 / June 29 2017
 ===================
 
