@@ -53,6 +53,9 @@ export default class ReactTestWrapper extends TestWrapper {
   }
 
   classNames () {
+    if (this.tagName() === 'svg') {
+      return this.attr('class')
+    }
     return this.el.className
   }
 
