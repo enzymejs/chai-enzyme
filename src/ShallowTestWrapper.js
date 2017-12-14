@@ -23,7 +23,7 @@ export default class ShallowTestWrapper extends TestWrapper {
 
     const rootInstance = root.instance()
     const rootType = rootInstance && rootInstance.constructor
-    const name = rootType ? getDisplayName(rootType) : (root.name() || '???')
+    const name = String(rootType ? getDisplayName(rootType) : (root.name() || '???'))
 
     if (root === this.wrapper) {
       return `<${name} />`
