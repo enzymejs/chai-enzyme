@@ -19,6 +19,13 @@ const DisplayNameSyntax = class extends React.Component {
 
 DisplayNameSyntax.displayName = 'DisplayNameSyntax'
 
+const SymbolComponent = class extends React.Component {
+  render () {
+    return (<div />)
+  }
+}
+SymbolComponent.displayName = Symbol('SymbolComponent')
+
 function inspect (wrapper) {
   return wrap(wrapper).inspect()
 }
@@ -31,6 +38,8 @@ describe('#inspect', () => {
       expect(String(inspect(shallow(<DisplayNameSyntax />).find('div')))).to.equal('the node in <DisplayNameSyntax />')
       expect(String(inspect(shallow(<DisplayNameSyntax />).find('span')))).to.equal('the node in <DisplayNameSyntax />')
       expect(String(inspect(shallow(<div />)))).to.equal('<div />')
+      expect(String(inspect(shallow(<SymbolComponent />)))).to.equal(`<${String(SymbolComponent.displayName)} />`)
+      expect(String(inspect(shallow(<SymbolComponent />).find('div')))).to.equal(`the node in <${String(SymbolComponent.displayName)} />`)
     })
   })
 
@@ -40,6 +49,8 @@ describe('#inspect', () => {
       expect(String(inspect(mount(<DisplayNameSyntax />)))).to.equal('<DisplayNameSyntax />')
       expect(String(inspect(mount(<DisplayNameSyntax />).find('div')))).to.equal('the node in <DisplayNameSyntax />')
       expect(String(inspect(mount(<DisplayNameSyntax />).find('span')))).to.equal('the node in <DisplayNameSyntax />')
+      expect(String(inspect(mount(<SymbolComponent />)))).to.equal(`<${String(SymbolComponent.displayName)} />`)
+      expect(String(inspect(mount(<SymbolComponent />).find('div')))).to.equal(`the node in <${String(SymbolComponent.displayName)} />`)
     })
   })
 
@@ -47,6 +58,7 @@ describe('#inspect', () => {
     it('returns unknown', () => {
       expect(String(inspect(render(<ClassSyntax />)))).to.equal('the node in <??? />')
       expect(String(inspect(render(<DisplayNameSyntax />)))).to.equal('the node in <??? />')
+      expect(String(inspect(render(<SymbolComponent />)))).to.equal(`the node in <??? />`)
     })
   })
 })
