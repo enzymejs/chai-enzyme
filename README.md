@@ -45,15 +45,13 @@
 ```js
 "peerDependencies": {
   "chai": "^3.0.0 || ^4.0.0",
-  "cheerio": "0.19.x || 0.20.x || 0.22.x || ^1.0.0-0",
   "enzyme": "^2.7.0 || ^3.0.0",
   "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0",
   "react-dom": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0"
 }
 ```
 
-`cheerio` is already a dependency of `enzyme`, so most probably you will not have
-to install it manually
+`cheerio` was previously a peer dependency, but because it's already a dependency of `enzyme` you will probably not have to install it manually.
 
 ```
 $ npm install chai-enzyme --save-dev
