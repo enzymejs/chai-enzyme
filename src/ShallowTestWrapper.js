@@ -37,7 +37,7 @@ export default class ShallowTestWrapper extends TestWrapper {
   }
 
   html () {
-    return this.wrapper.html()
+    return this.wrapper.debug().replace(/\n(\s*)/g, '')
   }
 
   style (name) {
