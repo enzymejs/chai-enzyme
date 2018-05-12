@@ -87,8 +87,6 @@ describe('#contain', () => {
       expect(() => {
         expect(wrapper).to.contain([<User index={3} />, <User index={4} />])
       }).to.throw('<li>\n           <User index={1} />\n         </li>')
-
     }, { render: false, mount: false })
-
   })
 })
