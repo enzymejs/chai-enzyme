@@ -20,10 +20,13 @@ wrapper.is('#parent') //=> false
 // Enzyme 3
 wrapper.find('#parent').length //=> 0
 wrapper.is('#parent') //=> true
-```
 
 The new version returns a cheerio wrapper with a type of tag that IS the parent element.
 Before it returned a wrapper with a type root that contains the parent element.
+```
+
+* [fix] Add support for components with a symbol as display name
+* [feature] Only show one-level-deep components in error messages when shallow rendering
 
 0.8.0 / June 29 2017
 ===================
