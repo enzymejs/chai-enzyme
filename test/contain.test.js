@@ -82,5 +82,11 @@ describe('#contain', () => {
         expect(undefined).to.contain([<User index={2} />, <User index={3} />])
       }).to.throw()
     })
+
+    it('fails and shows one level deep', (wrapper) => {
+      expect(() => {
+        expect(wrapper).to.contain([<User index={3} />, <User index={4} />])
+      }).to.throw('<li>\n           <User index={1} />\n         </li>')
+    }, { render: false, mount: false })
   })
 })
