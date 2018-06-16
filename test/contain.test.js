@@ -22,6 +22,7 @@ class Fixture extends React.Component {
             <User index={2} />
             <User index={3} />
           </li>
+          <li>Unknown User</li>
         </ul>
       </div>
     )
@@ -35,6 +36,7 @@ describe('#contain', () => {
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper).to.contain(<User index={1} />)
       expect(wrapper).to.contain(<User index={2} />)
+      expect(wrapper).to.contain('Unknown User')
     }, { render: false })
 
     it('passes negated when the actual does not match the expected', (wrapper) => {

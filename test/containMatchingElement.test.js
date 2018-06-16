@@ -20,6 +20,7 @@ class Fixture extends React.Component {
         <ul>
           <li><User index={1} name='John' /></li>
           <li><User index={2} name='Doe' /></li>
+          <li>Unknown User</li>
         </ul>
       </div>
     )
@@ -33,6 +34,7 @@ describe('#containMatchingElement', () => {
     it('passes when the actual matches the expected', (wrapper) => {
       expect(wrapper).to.containMatchingElement(<User name='John' />)
       expect(wrapper).to.containMatchingElement(<User name='Doe' />)
+      expect(wrapper).to.containMatchingElement('Unknown User')
     }, { render: false })
 
     it('passes negated when the actual does not match the expected', (wrapper) => {

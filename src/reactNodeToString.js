@@ -20,6 +20,8 @@ function reactArrayToJSXString (nodes) {
 export default function reactNodeToString (node) {
   if (Array.isArray(node)) {
     return reactArrayToJSXString(node)
+  } else if (typeof node === 'string') {
+    return node
   } else {
     return reactElementToJSXString(node)
   }
