@@ -19,6 +19,7 @@ class Fixture extends React.Component {
         <ul>
           <li><User index={1} objectProp={{foo: 'bar'}} /></li>
           <li><User index={2} /></li>
+          <li><User index={3} objectProp={undefined} /></li>
         </ul>
       </div>
     )
@@ -46,6 +47,16 @@ describe('#prop', () => {
         expect(wrapper.find(User).first()).to.not.have.prop('index')
       }).to.throw("not to have a 'index' prop")
     }, { render: false })
+
+    it('passes when the actual matches the expected and the value is undefined', (wrapper) => {
+      expect(wrapper.find(User).last()).to.have.prop('objectProp')
+    }, { render: false })
+
+    it('fails negated when the actual exists but is undefined', (wrapper) => {
+      expect(() => {
+        expect(wrapper.find(User).last()).to.not.have.prop('objectProp')
+      }).to.throw("to have a 'objectProp' prop")
+    }, { render: false })
   })
 
   describe('(key, value)', () => {
@@ -53,8 +64,16 @@ describe('#prop', () => {
       expect(wrapper.find(User).first()).to.have.prop('index', 1)
     }, { render: false })
 
+    it('passes when the actual matches the expected and is undefined', (wrapper) => {
+      expect(wrapper.find(User).last()).to.have.prop('objectProp', undefined)
+    }, { render: false })
+
     it('passes negated when the actual does not match the expected', (wrapper) => {
       expect(wrapper.find(User).first()).to.not.have.prop('index', 2)
+    }, { render: false })
+
+    it('passes when the actual matches the expected and is undefined', (wrapper) => {
+      expect(wrapper.find(User).last()).to.not.have.prop('objectProp', false)
     }, { render: false })
 
     it('fails when the actual does not match the expected', (wrapper) => {
